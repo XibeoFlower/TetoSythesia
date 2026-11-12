@@ -1,0 +1,2025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TetoSynthesia — Black MIDI Player</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<style>/* TetoSynthesia — giao diện đơn sắc (đen/trắng, tối giản) */
+:root{
+  --fg:#f2f2f2; --dim:#8f8f8f; --line:rgba(255,255,255,.14);
+  --panel:rgba(255,255,255,.05); --panel2:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;color:var(--fg);overflow:hidden;
+  font-family:'JetBrains Mono','Cascadia Code',ui-monospace,Consolas,'Courier New',monospace;
+  user-select:none;-webkit-user-select:none}
+button{font:inherit;color:inherit}
+#cv{position:fixed;inset:0;display:block;touch-action:none}
+
+/* ===== màn hình phủ ===== */
+.screen{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;
+  justify-content:center;background:rgba(0,0,0,.84);z-index:10;gap:14px;padding:20px}
+.screen.active{display:flex}
+.screenHead{display:flex;align-items:center;gap:16px;width:min(720px,92vw);margin-bottom:8px}
+.screenHead h2{font-size:20px;letter-spacing:6px;font-weight:600}
+.screenHead h2::before{content:'// ';color:var(--dim)}
+
+/* ===== menu chính ===== */
+#menu{gap:18px}
+#logoImg{width:132px;height:132px;image-rendering:auto;border:1px solid var(--line);
+  border-radius:30px;overflow:hidden;padding:0;background:#000}
+#menu h1{font-size:42px;letter-spacing:12px;font-weight:700;margin-left:12px}
+#menu h1 span{color:var(--dim)}
+#menu .tag{font-size:11px;letter-spacing:3px;color:var(--dim);margin-bottom:10px}
+.menuBtns{display:flex;flex-direction:column;gap:10px}
+.mbtn{width:min(400px,86vw);padding:15px 20px;background:var(--panel);
+  border:1px solid var(--line);text-align:left;cursor:pointer;transition:.14s;
+  font-size:16px;letter-spacing:3px;font-weight:600}
+.mbtn small{display:block;font-size:10px;color:var(--dim);margin-top:5px;
+  letter-spacing:1px;font-weight:400}
+.mbtn:hover{background:var(--fg);color:#000;transform:translateX(4px)}
+.mbtn:hover small{color:#444}
+#menu .foot{position:absolute;bottom:18px;font-size:10px;color:var(--dim);letter-spacing:1px;text-align:center}
+
+/* ===== MIDI player ===== */
+#search{width:min(720px,92vw);padding:12px 16px;background:var(--panel);
+  border:1px solid var(--line);color:var(--fg);font:inherit;letter-spacing:1px;outline:none}
+#search:focus{border-color:var(--fg)}
+#libList{width:min(720px,92vw);height:min(46vh,420px);overflow-y:auto;
+  border:1px solid var(--line);background:rgba(0,0,0,.5)}
+.libItem{display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:12px 16px;border-bottom:1px solid var(--line);cursor:pointer;transition:.12s}
+.libItem:hover{background:var(--panel2)}
+.libItem .nm{letter-spacing:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.libItem .meta{font-size:10px;color:var(--dim);white-space:nowrap}
+.libItem.stress .nm::before{content:'⚠ ';color:var(--fg)}
+.libEmpty{padding:26px;text-align:center;color:var(--dim);font-size:12px;letter-spacing:1px}
+.libFoot{display:flex;gap:14px;align-items:center;font-size:11px;color:var(--dim)}
+#libList::-webkit-scrollbar{width:8px}
+#libList::-webkit-scrollbar-thumb{background:var(--panel2)}
+
+/* ===== cài đặt ===== */
+#set{justify-content:flex-start;padding-top:6vh}
+.setRows{width:min(680px,94vw);overflow-y:auto;max-height:78vh}
+.setRow{display:flex;justify-content:space-between;align-items:center;gap:14px;
+  padding:13px 4px;border-bottom:1px solid var(--line)}
+.setRow label{font-size:13px;letter-spacing:1px}
+.setRow .hint{display:block;font-size:10px;color:var(--dim);margin-top:4px;letter-spacing:0}
+.setRow .ctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+select,input[type=text]{background:var(--panel);border:1px solid var(--line);color:var(--fg);
+  font:inherit;font-size:12px;padding:7px 10px;outline:none}
+select:focus{border-color:var(--fg)}
+#inpFps{width:80px;background:var(--panel);border:1px solid var(--line);color:var(--fg);
+  font:inherit;font-size:12px;padding:7px 10px;outline:none}
+#inpFps:focus{border-color:var(--fg)}
+input[type=range]{accent-color:#fff;width:170px}
+input[type=color]{width:34px;height:26px;border:1px solid var(--line);background:none;padding:0;cursor:pointer}
+.tgl{width:48px;height:24px;border:1px solid var(--line);position:relative;cursor:pointer;
+  background:var(--panel);flex:none}
+.tgl::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;
+  background:var(--dim);transition:.14s}
+.tgl.on::after{left:27px;background:#fff}
+.sw{width:30px;height:30px;border:1px solid var(--line);cursor:pointer;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;font-size:9px;color:#000}
+.sw.sel{outline:2px solid #fff;outline-offset:2px}
+.val{font-size:11px;color:var(--dim);min-width:44px;text-align:right}
+
+/* ===== HUD trên sân khấu ===== */
+#hud{position:fixed;inset:0;z-index:5;pointer-events:none;display:none}
+#hud.on{display:block}
+#progress{position:absolute;top:0;left:0;right:0;height:5px;cursor:pointer;
+  pointer-events:auto;background:rgba(255,255,255,.07)}
+#progressFill{height:100%;width:0;background:#fff}
+#topbar{position:absolute;top:5px;left:0;right:0;display:flex;gap:10px;align-items:center;
+  padding:10px 14px;pointer-events:auto;background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,0))}
+#topbar .spacer{flex:1}
+#songTitle{font-size:13px;letter-spacing:2px;color:var(--fg);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}
+#timeBox{font-size:11px;color:var(--dim);letter-spacing:1px}
+.hbtn{border:1px solid var(--line);background:rgba(0,0,0,.6);color:var(--fg);
+  padding:7px 13px;cursor:pointer;font-size:12px;letter-spacing:2px;transition:.12s}
+.hbtn:hover{background:var(--fg);color:#000}
+#stats{position:absolute;left:14px;bottom:calc(16vh + 10px);font-size:11px;color:var(--dim);
+  letter-spacing:1px;text-shadow:0 0 6px #000;line-height:1.7}
+#freeHint{position:absolute;top:64px;left:50%;transform:translateX(-50%);
+  font-size:12px;color:var(--dim);letter-spacing:2px;text-align:center}
+
+/* ===== toast ===== */
+#toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,14px);
+  background:#0a0a0a;border:1px solid var(--fg);color:var(--fg);padding:11px 20px;
+  font-size:12px;letter-spacing:1px;opacity:0;transition:.25s;z-index:50;max-width:80vw;
+  pointer-events:none}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* drop overlay */
+#drop{position:fixed;inset:0;z-index:40;display:none;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.75);border:2px dashed var(--fg);font-size:16px;letter-spacing:3px}
+#drop.on{display:flex}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hud">
+  <div id="progress"><div id="progressFill"></div></div>
+  <div id="topbar">
+    <button id="btnBack" class="hbtn" data-i18n="back">‹ MENU</button>
+    <div id="songTitle">—</div>
+    <div class="spacer"></div>
+    <div id="timeBox">0:00 / 0:00</div>
+    <button id="btnSpeed" class="hbtn">1.0×</button>
+    <button id="btnPause" class="hbtn">⏸</button>
+  </div>
+  <div id="freeHint" style="display:none" data-i18n-html="freeHint"></div>
+  <div id="stats">—</div>
+</div>
+
+<div id="menu" class="screen active">
+  <img id="logoImg" alt="TetoSynthesia" src="data:image/png;base64,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">
+  <h1>TETO<span>SYNTHESIA</span></h1>
+  <div class="tag" data-i18n="tag">BLACK MIDI PLAYER • MONOCHROME • v1.2.0</div>
+  <div class="menuBtns">
+    <button class="mbtn" id="mFree"><span class="mt" data-i18n="mFree">FREE PLAY</span><small data-i18n="mFreeHint">play by yourself — mouse / QWERTY / MIDI keyboard</small></button>
+    <button class="mbtn" id="mPlay"><span class="mt" data-i18n="mPlay">MIDI PLAYER</span><small data-i18n="mPlayHint">pick &amp; search MIDI songs — Black MIDI ready</small></button>
+    <button class="mbtn" id="mSet"><span class="mt" data-i18n="mSet">SETTINGS</span><small data-i18n="mSetHint">SoundFont SF2/SF1, note colors, 3D, QWERTY, fall speed…</small></button>
+  </div>
+  <div class="foot" data-i18n="foot">ESC: menu • SPACE: pause • ←/→: seek ±5s • drag &amp; drop .mid / .sf2 into the window</div>
+</div>
+
+<div id="lib" class="screen">
+  <div class="screenHead"><button class="hbtn" id="libBack" data-i18n="back">‹ MENU</button><h2 data-i18n="libTitle">MIDI PLAYER</h2></div>
+  <input id="search" type="text" data-i18n-ph="searchPh" placeholder="Search MIDI songs… (type a name)">
+  <div id="libList"></div>
+  <div class="libFoot">
+    <button class="hbtn" id="btnOpenMidi" data-i18n="btnOpenMidi">＋ OPEN MIDI FILE (.mid)</button>
+    <span data-i18n="libDropNote">or drag &amp; drop a .mid file into the window</span>
+  </div>
+  <input type="file" id="fileMidi" accept=".mid,.midi,.rmi" hidden>
+</div>
+
+<div id="set" class="screen">
+  <div class="screenHead"><button class="hbtn" id="setBack" data-i18n="back">‹ MENU</button><h2 data-i18n="setTitle">SETTINGS</h2></div>
+  <div class="setRows">
+    <div class="setRow">
+      <label><span data-i18n="langLabel">Language</span><span class="hint" data-i18n="langHint">English (default) or Vietnamese — applied instantly</span></label>
+      <div class="ctl">
+        <select id="selLang"><option value="en">English</option><option value="vi">Tiếng Việt</option></select>
+      </div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="midiLabel">MIDI input device</span><span class="hint" data-i18n="midiHint">USB MIDI keyboard / MIDI interface via Web MIDI API</span></label>
+      <div class="ctl">
+        <select id="midiDev"><option value="" data-i18n="midiNone">— None —</option></select>
+        <button class="hbtn" id="midiRefresh">⟳</button>
+      </div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="sfLabel">Sound</span><span class="hint" id="sfStatus">TetoSynth — built-in synth (default, ultra light)</span></label>
+      <div class="ctl">
+        <button class="hbtn" id="btnSf" data-i18n="btnLoadSf">＋ LOAD SF2/SF1…</button>
+        <button class="hbtn" id="btnSfReset" data-i18n="btnResetSf">BACK TO TETOSYNTH</button>
+      </div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="colorLabel">Note colors</span><span class="hint" data-i18n="colorHint">Monochrome palettes + 2 soft color presets (toggle as you like)</span></label>
+      <div class="ctl" id="colorRow"></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="qwertyLabel">QWERTY keyboard</span><span class="hint" data-i18n="qwertyHint">A–; row plays like Synthesia (Z/X octave shift)</span></label>
+      <div class="tgl on" id="tglQwerty"></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="mode3dLabel">3D mode</span><span class="hint" data-i18n="mode3dHint">Notes fall in 3D perspective (turn off on weak PCs)</span></label>
+      <div class="tgl" id="tgl3d"></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="glowLabel">Note glow</span><span class="hint" data-i18n="glowHint">Halo + dust particles when a note hits the keys</span></label>
+      <div class="tgl on" id="tglGlow"></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="fpsLabel">FPS limit</span><span class="hint" data-i18n="fpsHint">Default 120 — real FPS is capped by your screen refresh rate</span></label>
+      <div class="ctl"><select id="selFps"></select><input type="number" id="inpFps" min="15" max="1000" value="165" hidden></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="fallLabel">Fall speed</span><span class="hint" data-i18n="fallHint">Faster fits note-heavy Black MIDI better</span></label>
+      <div class="ctl"><input type="range" id="rgFall" min="80" max="600" value="240"><span class="val" id="valFall">240</span></div>
+    </div>
+    <div class="setRow">
+      <label><span data-i18n="volLabel">Volume</span><span class="hint"></span></label>
+      <div class="ctl"><input type="range" id="rgVol" min="0" max="100" value="80"><span class="val" id="valVol">80</span></div>
+    </div>
+  </div>
+  <input type="file" id="fileSf" accept=".sf2,.sf1,.sf3" hidden>
+</div>
+
+<div id="drop" data-i18n="dropText">DROP FILE HERE — .mid / .sf2</div>
+<div id="toast"></div>
+<script>window.DEMO_MIDIS = [{"name": "Für Elise", "data": "TVRoZAAAAAYAAAABAeBNVHJrAAABcQD/UQMGihsAkExpAJEtPniATAAAkEtpeIBLAACQTGl4gEwAAJBLaXiASwAAkExpeIBMAACQR2l4gEcAAIEtAACQSmkAkTQ+eIBKAACQSGl4gEgAAJBFaXiBNAAAkTk+gXCARQAAkDxpeIA8AACBOQAAkEBpAJEoPniAQAAAkEVpeIBFAACQR2mCaIBHAACQQGl4gEAAAIEoAACQRGkAkTQ+eIBEAACQR2l4gEcAAJBIaXiBNAAAkTg+gXCASAAAkEBpeIBAAACBOAAAkExpAJEtPniATAAAkEtpeIBLAACQTGl4gEwAAJBLaXiASwAAkExpeIBMAACQR2l4gEcAAIEtAACQSmkAkTQ+eIBKAACQSGl4gEgAAJBFaXiBNAAAkTk+gXCARQAAkDxpeIA8AACBOQAAkEBpeIBAAACQRWl4gEUAAJBHaYJogEcAAJBAaXiAQAAAkEhpeIBIAACQR2l4gEcAAJBFaYNggEUAAP8vAA=="}, {"name": "Ode To Joy", "data": "TVRoZAAAAAYAAAABAeBNVHJrAAACJwD/UQMHoSAAkEBkAJEwRoFwgEAAAJBAZIFwgEAAAJBBZIFwgEEAAJBDZIFwgEMAAIEwAACQQ2QAkTBGgXCAQwAAkEFkgXCAQQAAkEBkgXCAQAAAkD5kgXCAPgAAgTAAAJA8ZACRK0aBcIA8AACQPGSBcIA8AACQPmSBcIA+AACQQGSBcIBAAACBKwAAkEBkAJEwRoJogEAAAJA+ZHiAPgAAkD5kg2CAPgAAgTAAAJBAZACRMEaBcIBAAACQQGSBcIBAAACQQWSBcIBBAACQQ2SBcIBDAACBMAAAkENkAJEpRoFwgEMAAJBBZIFwgEEAAJBAZIFwgEAAAJA+ZIFwgD4AAIEpAACQPGQAkStGgXCAPAAAkDxkgXCAPAAAkD5kgXCAPgAAkEBkgXCAQAAAgSsAAJA+ZACRMEaCaIA+AACQPGR4gDwAAJA8ZINggDwAAIEwAACQPmQAkTBGgXCAPgAAkD5kgXCAPgAAkEBkgXCAQAAAkDxkgXCAPAAAgTAAAJA+ZACRLUaBcIA+AACQQGR4gEAAAJBBZHiAQQAAkEBkgXCAQAAAkDxkgXCAPAAAgS0AAJA+ZACRKUaBcIA+AACQQGR4gEAAAJBBZHiAQQAAkEBkgXCAQAAAkD5kgXCAPgAAgSkAAJA8ZACRK0aBcIA8AACQPmSBcIA+AACQN2SDYIA3AACBKwAAkTBGh0CBMAAAkStGh0CBKwAAkTBGh0CBMAAA/y8A"}, {"name": "Twinkle", "data": "TVRoZAAAAAYAAAABAeBNVHJrAAABhQD/UQMJJ8AAkDxkg2CAPAAAkDxkg2CAPAAAkENkg2CAQwAAkENkg2CAQwAAkEVkg2CARQAAkEVkg2CARQAAkENkh0CAQwAAkEFkg2CAQQAAkEFkg2CAQQAAkEBkg2CAQAAAkEBkg2CAQAAAkD5kg2CAPgAAkD5kg2CAPgAAkDxkh0CAPAAAkENkg2CAQwAAkENkg2CAQwAAkEFkg2CAQQAAkEFkg2CAQQAAkEBkg2CAQAAAkEBkg2CAQAAAkD5kh0CAPgAAkENkg2CAQwAAkENkg2CAQwAAkEFkg2CAQQAAkEFkg2CAQQAAkEBkg2CAQAAAkEBkg2CAQAAAkD5kh0CAPgAAkDxkg2CAPAAAkDxkg2CAPAAAkENkg2CAQwAAkENkg2CAQwAAkEVkg2CARQAAkEVkg2CARQAAkENkh0CAQwAAkEFkg2CAQQAAkEFkg2CAQQAAkEBkg2CAQAAAkEBkg2CAQAAAkD5kg2CAPgAAkD5kg2CAPgAAkDxkh0CAPAAA/y8A"}];
+/* TetoSynthesia — i18n: đa ngôn ngữ (English mặc định + Tiếng Việt) */
+(function (global) {
+  'use strict';
+
+  const I18N = {
+    en: {
+      back: '‹ MENU',
+      tag: 'BLACK MIDI PLAYER • MONOCHROME • v1.2.0',
+      mFree: 'FREE PLAY',
+      mFreeHint: 'play by yourself — mouse / QWERTY / MIDI keyboard',
+      mPlay: 'MIDI PLAYER',
+      mPlayHint: 'pick & search MIDI songs — Black MIDI ready',
+      mSet: 'SETTINGS',
+      mSetHint: 'SoundFont SF2/SF1, note colors, 3D, QWERTY, fall speed…',
+      foot: 'ESC: menu • SPACE: pause • ←/→: seek ±5s • drag & drop .mid / .sf2 into the window',
+      freeHint: 'FREE PLAY — mouse / QWERTY (A–;) / MIDI keyboard<br>Z/X octave shift • drop a .mid file to play it',
+      libTitle: 'MIDI PLAYER',
+      searchPh: 'Search MIDI songs… (type a name)',
+      btnOpenMidi: '＋ OPEN MIDI FILE (.mid)',
+      libDropNote: 'or drag & drop a .mid file into the window',
+      setTitle: 'SETTINGS',
+      langLabel: 'Language',
+      langHint: 'English (default) or Vietnamese — applied instantly',
+      midiLabel: 'MIDI input device',
+      midiHint: 'USB MIDI keyboard / MIDI interface via Web MIDI API',
+      midiNone: '— None —',
+      sfLabel: 'Sound',
+      sfHintTeto: 'TetoSynth — built-in synth (default, ultra light)',
+      sfHintSf: (n, p) => 'SoundFont: ' + n + ' (' + p + ' presets)',
+      btnLoadSf: '＋ LOAD SF2/SF1…',
+      btnResetSf: 'BACK TO TETOSYNTH',
+      colorLabel: 'Note colors',
+      colorHint: 'Monochrome palettes + 2 soft color presets (toggle as you like)',
+      palTrang: 'White', palBac: 'Silver', palLuc: 'Light green',
+      palHo: 'Amber', palHong: 'Teto Pink', palKenh: 'By channel',
+      palCustom: 'Custom color',
+      qwertyLabel: 'QWERTY keyboard',
+      qwertyHint: 'A–; row plays like Synthesia (Z/X octave shift)',
+      mode3dLabel: '3D mode',
+      mode3dHint: 'Notes fall in 3D perspective (turn off on weak PCs)',
+      glowLabel: 'Note glow',
+      glowHint: 'Halo + dust particles when a note hits the keys',
+      fpsLabel: 'FPS limit',
+      fpsHint: 'Default 120 — real FPS is capped by your screen refresh rate',
+      fpsDefault: ' (default)',
+      fpsMax: 'Max (screen refresh)',
+      fpsCustom: 'Custom…',
+      fallLabel: 'Fall speed',
+      fallHint: 'Faster fits note-heavy Black MIDI better',
+      volLabel: 'Volume',
+      dropText: 'DROP FILE HERE — .mid / .sf2',
+      stressName: 'BLACK MIDI — Stress Test',
+      stressLibName: 'BLACK MIDI — Stress Test (generated ~100k notes)',
+      metaNotes: (n) => n + ' notes',
+      libEmpty: (q) => 'No song matches "' + q + '"',
+      songCount: (nm, n) => nm + '  •  ' + n + ' notes',
+      songTitleFree: 'FREE PLAY',
+      statsVisible: (n) => n + ' notes on screen',
+      statsSkipped: (n) => ' • skipped ' + n,
+      statsFree: (f) => f + ' FPS • Free Play',
+      toastResetSf: 'Back to TetoSynth (built-in synth)',
+      toastBadFile: 'Unsupported file type (.mid / .sf2)',
+      toastReading: (n) => 'Reading ' + n + '…',
+      toastLoaded: (n, t) => 'Loaded: ' + n + ' notes • ' + t,
+      toastMidiErr: (m) => 'MIDI error: ' + m,
+      toastSfLoading: 'Loading SoundFont (may take a few seconds)…',
+      toastSfOk: (n, p) => 'SoundFont OK: ' + n + ' (' + p + ' presets)',
+      toastSfErr: (m) => 'SoundFont error: ' + m,
+      toastOctave: (o) => 'Octave: ' + o,
+      toastMidiChanged: 'MIDI device list changed',
+      toastMidiList: (names) => 'MIDI devices: ' + names,
+    },
+    vi: {
+      back: '‹ MENU',
+      tag: 'BLACK MIDI PLAYER • ĐƠN SẮC (MONOCHROME) • v1.2.0',
+      mFree: 'FREE PLAY',
+      mFreeHint: 'tự chơi bằng chuột / QWERTY / bàn phím MIDI',
+      mPlay: 'MIDI PLAYER',
+      mPlayHint: 'chọn & tìm bài MIDI để phát — hỗ trợ Black MIDI',
+      mSet: 'CÀI ĐẶT',
+      mSetHint: 'SoundFont SF2/SF1, màu note, 3D, QWERTY, tốc độ rơi…',
+      foot: 'ESC: về menu • SPACE: tạm dừng • ←/→: tua ±5s • kéo-thả file .mid / .sf2 vào cửa sổ',
+      freeHint: 'FREE PLAY — chơi bằng chuột / QWERTY (A–;) / bàn phím MIDI<br>Z/X đổi quãng tám • kéo-thả file .mid để phát luôn',
+      libTitle: 'MIDI PLAYER',
+      searchPh: 'Tìm bài MIDI… (gõ tên bài)',
+      btnOpenMidi: '＋ MỞ FILE MIDI (.mid)',
+      libDropNote: 'hoặc kéo-thả file .mid vào cửa sổ',
+      setTitle: 'CÀI ĐẶT',
+      langLabel: 'Ngôn ngữ',
+      langHint: 'Tiếng Việt hoặc English (mặc định) — đổi là áp dụng ngay',
+      midiLabel: 'Thiết bị MIDI vào',
+      midiHint: 'Bàn phím MIDI cắm USB/tiết diện chỉnh MIDI qua Web MIDI API',
+      midiNone: '— Không —',
+      sfLabel: 'Âm thanh',
+      sfHintTeto: 'TetoSynth — nhạc số nội bộ (mặc định, siêu nhẹ)',
+      sfHintSf: (n, p) => 'SoundFont: ' + n + ' (' + p + ' preset)',
+      btnLoadSf: '＋ TẢI SF2/SF1…',
+      btnResetSf: 'VỀ TETOSYNTH',
+      colorLabel: 'Màu note',
+      colorHint: 'Bảng màu đơn sắc + 2 preset có màu nhẹ (tắt/ bật tùy ý)',
+      palTrang: 'Trắng', palBac: 'Bạc', palLuc: 'Lục nhạt',
+      palHo: 'Hổ phách', palHong: 'Hồng Teto', palKenh: 'Theo kênh',
+      palCustom: 'Màu tùy chọn',
+      qwertyLabel: 'Bàn phím QWERTY',
+      qwertyHint: 'Hàng A–; chơi như Synthesia (Z/X đổi quãng tám)',
+      mode3dLabel: 'Chế độ 3D',
+      mode3dHint: 'Note rơi trong phối cảnh 3D (tắt nếu máy yếu)',
+      glowLabel: 'Ánh sáng note (glow)',
+      glowHint: 'Quầng sáng + hạt bụi khi note chạm phím',
+      fpsLabel: 'Giới hạn FPS',
+      fpsHint: 'Mặc định 120 — FPS thật tối đa bằng tần số quét màn hình',
+      fpsDefault: ' (mặc định)',
+      fpsMax: 'Tối đa (theo màn hình)',
+      fpsCustom: 'Tuỳ chỉnh…',
+      fallLabel: 'Tốc độ rơi',
+      fallHint: 'Càng nhanh càng phù hợp Black MIDI nhiều note',
+      volLabel: 'Âm lượng',
+      dropText: 'THẢ FILE VÀO ĐÂY — .mid / .sf2',
+      stressName: 'BLACK MIDI — Stress Test',
+      stressLibName: 'BLACK MIDI — Stress Test (tự sinh ~100k note)',
+      metaNotes: (n) => n + ' note',
+      libEmpty: (q) => 'Không có bài nào khớp "' + q + '"',
+      songCount: (nm, n) => nm + '  •  ' + n + ' note',
+      songTitleFree: 'FREE PLAY',
+      statsVisible: (n) => n + ' note trên màn hình',
+      statsSkipped: (n) => ' • đã bỏ ' + n,
+      statsFree: (f) => f + ' FPS • Free Play',
+      toastResetSf: 'Đã về TetoSynth (nhạc số nội bộ)',
+      toastBadFile: 'Không nhận định dạng file này (.mid / .sf2)',
+      toastReading: (n) => 'Đang đọc ' + n + '…',
+      toastLoaded: (n, t) => 'Đã nạp: ' + n + ' note • ' + t,
+      toastMidiErr: (m) => 'Lỗi đọc MIDI: ' + m,
+      toastSfLoading: 'Đang nạp SoundFont (có thể mất vài giây)…',
+      toastSfOk: (n, p) => 'SoundFont OK: ' + n + ' (' + p + ' preset)',
+      toastSfErr: (m) => 'Lỗi SoundFont: ' + m,
+      toastOctave: (o) => 'Quãng tám: ' + o,
+      toastMidiChanged: 'Danh sách thiết bị MIDI đã đổi',
+      toastMidiList: (names) => 'Thiết bị MIDI: ' + names,
+    },
+  };
+
+  function cur() {
+    const App = global.App;
+    const lang = App && App.settings && App.settings.lang;
+    return I18N[lang] || I18N.en;
+  }
+  function T(k) {
+    const d = cur();
+    const s = d[k] != null ? d[k] : I18N.en[k];
+    if (typeof s === 'function') return s.apply(null, [].slice.call(arguments, 1));
+    return s != null ? s : k;
+  }
+  function applyLang() {
+    const App = global.App;
+    const lang = (App && App.settings && App.settings.lang) || 'en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = T(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = T(el.getAttribute('data-i18n-html')); });
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = T(el.getAttribute('data-i18n-ph')); });
+  }
+
+  global.TSI18N = { I18N, T, applyLang };
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — MIDI parser (Black-MIDI friendly, đầu ra SoA typed arrays) */
+(function (global) {
+  'use strict';
+
+  const MAX_NOTES = 3e6;
+
+  function parseMIDI(bytes) {
+    const u8 = bytes instanceof Uint8Array ? bytes : new Uint8Array(bytes);
+    const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+    let p = 0;
+    function u32() { const v = dv.getUint32(p); p += 4; return v >>> 0; }
+    function u16() { const v = dv.getUint16(p); p += 2; return v; }
+    function u8v() { const v = u8[p]; p += 1; return v; }
+    function str4() { let s = ''; for (let i = 0; i < 4; i++) s += String.fromCharCode(u8[p + i]); p += 4; return s; }
+
+    if (str4() !== 'MThd') throw new Error('Không phải file MIDI (thiếu MThd)');
+    const hdrLen = u32();
+    u16(); // format
+    const ntrks = u16();
+    const div = u16();
+    p += hdrLen - 6;
+
+    let ppq = 480, smpteFps = 0, smpteTpf = 0;
+    if (div & 0x8000) { smpteFps = 256 - (div >> 8); smpteTpf = div & 0xff; ppq = 480; }
+    else ppq = div || 480;
+
+    const sTick = [], eTick = [], vKey = [], vVel = [], vChan = [], vTrk = [];
+    const tempos = [{ tick: 0, uspq: 500000 }];
+    const progByChan = {};
+    let trackIdx = 0, truncated = false;
+
+    while (p + 8 <= u8.length) {
+      const id = str4(); const len = u32();
+      const end = p + len;
+      if (id !== 'MTrk') { p = end; continue; }
+      let tick = 0, run = 0;
+      const open = new Map();
+      while (p < end) {
+        let d = 0, c;
+        do { c = u8v(); d = (d << 7) | (c & 0x7f); } while (c & 0x80);
+        tick += d;
+        let st = u8[p];
+        if (st & 0x80) { p++; run = st; } else { st = run; }
+        if (st === 0xff) {
+          const mt = u8v();
+          let ml = 0, m;
+          do { m = u8v(); ml = (ml << 7) | (m & 0x7f); } while (m & 0x80);
+          if (mt === 0x51 && ml === 3) {
+            const us = (u8[p] << 16) | (u8[p + 1] << 8) | u8[p + 2]; p += 3;
+            tempos.push({ tick, uspq: us });
+          } else if (mt === 0x2f) { p = end; break; }
+          else p += ml;
+        } else if (st === 0xf0 || st === 0xf7) {
+          let ml = 0, m;
+          do { m = u8v(); ml = (ml << 7) | (m & 0x7f); } while (m & 0x80);
+          p += ml;
+        } else {
+          const type = st & 0xf0, chan = st & 0x0f;
+          if (type === 0x90) {
+            const note = u8v(), vel = u8v();
+            const k = (chan << 8) | note;
+            if (vel > 0) {
+              let arr = open.get(k);
+              if (!arr) { arr = []; open.set(k, arr); }
+              arr.push({ t: tick, v: vel });
+            } else {
+              const arr = open.get(k);
+              if (arr && arr.length) {
+                const o = arr.shift();
+                if (sTick.length < MAX_NOTES) {
+                  sTick.push(o.t); eTick.push(tick); vKey.push(note); vVel.push(o.v);
+                  vChan.push(chan); vTrk.push(trackIdx);
+                } else truncated = true;
+              }
+            }
+          } else if (type === 0x80) {
+            const note = u8v(); u8v();
+            const arr = open.get((chan << 8) | note);
+            if (arr && arr.length) {
+              const o = arr.shift();
+              if (sTick.length < MAX_NOTES) {
+                sTick.push(o.t); eTick.push(tick); vKey.push(note); vVel.push(o.v);
+                vChan.push(chan); vTrk.push(trackIdx);
+              } else truncated = true;
+            }
+          } else if (type === 0xc0) {
+            progByChan[chan] = u8v();
+          } else if (type === 0xb0 || type === 0xa0 || type === 0xe0) { p += 2; }
+          else if (type === 0xd0) { p += 1; }
+          else { /* trạng thái chạy lạ → bỏ */ }
+        }
+        if (sTick.length >= MAX_NOTES) break;
+      }
+      // đóng note còn treo
+      if (open.size) {
+        for (const [k, arr] of open) {
+          for (const o of arr) {
+            const note = k & 0xff, chan = k >> 8;
+            sTick.push(o.t); eTick.push(tick + 120); vKey.push(note); vVel.push(o.v);
+            vChan.push(chan); vTrk.push(trackIdx);
+          }
+        }
+        open.clear();
+      }
+      trackIdx++;
+      p = end;
+    }
+
+    const n = sTick.length;
+    if (smpteFps > 0) tempos.length = 0, tempos.push({ tick: 0, uspq: 1e6 * ppq / (smpteFps * smpteTpf) });
+    tempos.sort((a, b) => a.tick - b.tick);
+    const segT = new Float64Array(tempos.length), segS = new Float64Array(tempos.length), segU = new Float64Array(tempos.length);
+    for (let i = 0; i < tempos.length; i++) { segT[i] = tempos[i].tick; segU[i] = tempos[i].uspq; }
+    for (let i = 1; i < tempos.length; i++) segS[i] = segS[i - 1] + (segT[i] - segT[i - 1]) * segU[i - 1] / 1e6 / ppq;
+    function t2s(tick) {
+      if (tick <= 0) return 0;
+      let lo = 0, hi = tempos.length - 1;
+      while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (segT[mid] <= tick) lo = mid; else hi = mid - 1; }
+      return segS[lo] + (tick - segT[lo]) * segU[lo] / 1e6 / ppq;
+    }
+
+    const startSec = new Float64Array(n), endSec = new Float64Array(n);
+    let lastTick = 0;
+    for (let i = 0; i < n; i++) {
+      startSec[i] = t2s(sTick[i]); endSec[i] = t2s(eTick[i]);
+      if (endSec[i] <= startSec[i]) endSec[i] = startSec[i] + 0.05;
+      if (eTick[i] > lastTick) lastTick = eTick[i];
+    }
+    // sắp theo thời điểm bắt đầu (ổn định, kèm key để vẽ đẹp)
+    const idx = new Int32Array(n);
+    for (let i = 0; i < n; i++) idx[i] = i;
+    const S = startSec, K = sTick;
+    idx.sort((a, b) => (S[a] - S[b]) || (K[a] - K[b]));
+
+    const o = {
+      ppq, trackCount: trackIdx || ntrks, noteCount: n, truncated: !!truncated,
+      duration: n ? Math.max(t2s(lastTick), endSec[idx[n - 1]]) : 0,
+      start: new Float64Array(n), end: new Float64Array(n),
+      key: new Uint8Array(n), vel: new Uint8Array(n),
+      chan: new Uint8Array(n), track: new Uint8Array(n),
+      tempos, programs: progByChan,
+    };
+    for (let i = 0; i < n; i++) {
+      const j = idx[i];
+      o.start[i] = startSec[j]; o.end[i] = endSec[j];
+      o.key[i] = vKey[j]; o.vel[i] = vVel[j]; o.chan[i] = vChan[j]; o.track[i] = vTrk[j];
+    }
+    return o;
+  }
+
+  global.TSMidi = { parseMIDI };
+  if (typeof module !== 'undefined' && module.exports) module.exports = global.TSMidi;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — SoundFont 2/1 (sfbk) minimal parser + Web Audio player
+   Chỉ dùng các generator cốt lõi: sample, key/vel range, loop, envelope, pan, tune. */
+(function (global) {
+  'use strict';
+
+  const GEN = {
+    startAddrs: 0, endAddrs: 1, startLoop: 2, endLoop: 3,
+    startCoarse: 4, endCoarse: 12, pan: 17,
+    delayVol: 33, attackVol: 34, holdVol: 35, decayVol: 36, sustainVol: 37, releaseVol: 38,
+    keyToHold: 39, keyToDecay: 40,
+    instrument: 41, keyRange: 42, velRange: 43,
+    startLoopCoarse: 44, endLoopCoarse: 46,
+    attenuation: 48, coarseTune: 51, fineTune: 52, sampleModes: 53, rootKey: 56,
+  };
+
+  function parseSF2(u8) {
+    const dv = new DataView(u8.buffer, u8.byteOffset, u8.byteLength);
+    function str4(off) { let s = ''; for (let i = 0; i < 4; i++) s += String.fromCharCode(u8[off + i]); return s; }
+    if (str4(0) !== 'RIFF' || str4(8) !== 'sfbk') throw new Error('Không phải SoundFont (sfbk)');
+
+    const chunks = {}; let smplOff = -1, smplLen = 0;
+    // quét cây RIFF
+    (function walk(start, end, ltype) {
+      let p = start;
+      while (p + 8 <= end) {
+        const id = str4(p); const len = dv.getUint32(p + 4, true);
+        if (id === 'LIST') { walk(p + 12, p + 8 + len, str4(p + 8)); }
+        else {
+          if (ltype === 'sdta' && id === 'smpl') { smplOff = p + 8; smplLen = len; }
+          if (ltype === 'pdta') chunks[id] = { off: p + 8, len };
+        }
+        p += 8 + len + (len & 1);
+      }
+    })(12, 8 + dv.getUint32(4, true), null);
+
+    function recs(id, size, mk) {
+      const c = chunks[id];
+      if (!c) return [];
+      const out = []; const n = Math.floor(c.len / size);
+      for (let i = 0; i < n; i++) out.push(mk(c.off + i * size));
+      return out;
+    }
+    const S = (o) => { let s = ''; for (let i = 0; i < 20; i++) { const c = u8[o + i]; if (c >= 32) s += String.fromCharCode(c); } return s; };
+
+    const phdr = recs('phdr', 38, (o) => ({ name: S(o), prog: dv.getUint16(o + 20, true), bank: dv.getUint16(o + 22, true), bag: dv.getUint16(o + 24, true) }));
+    const pbag = recs('pbag', 4, (o) => ({ gen: dv.getUint16(o, true) }));
+    const pgen = recs('pgen', 4, (o) => ({ op: dv.getUint16(o, true), amt: dv.getInt16(o + 2, true) }));
+    const inst = recs('inst', 24, (o) => ({ name: S(o), bag: dv.getUint16(o + 22, true) }));
+    const ibag = recs('ibag', 4, (o) => ({ gen: dv.getUint16(o, true) }));
+    const igen = recs('igen', 4, (o) => ({ op: dv.getUint16(o, true), amt: dv.getInt16(o + 2, true) }));
+    const shdr = recs('shdr', 46, (o) => ({
+      name: S(o), start: dv.getUint32(o + 20, true), end: dv.getUint32(o + 24, true),
+      startLoop: dv.getUint32(o + 28, true), endLoop: dv.getUint32(o + 32, true),
+      rate: dv.getUint32(o + 36, true), pitch: u8[o + 40], corr: dv.getInt8(o + 41),
+    }));
+    if (!smplOff) throw new Error('Thiếu dữ liệu sample (sdta/smpl)');
+    if (!phdr.length) throw new Error('SoundFont rỗng (không có preset)');
+
+    function genRange(list, a, b) {
+      const m = new Map();
+      for (let i = a; i < b && i < list.length; i++) m.set(list[i].op, list[i].amt);
+      return m;
+    }
+    function ranges(list, a, b) { // keyRange/velRange dạng lo|hi
+      const m = genRange(list, a, b);
+      const kr = m.get(GEN.keyRange), vr = m.get(GEN.velRange);
+      return { keyLo: kr == null ? 0 : kr & 0xff, keyHi: kr == null ? 127 : (kr >> 8) & 0xff, velLo: vr == null ? 0 : vr & 0xff, velHi: vr == null ? 127 : (vr >> 8) & 0xff, g: m };
+    }
+
+    // instrument zones — tầng instrument: op 42 = keyRange, op 43 = sampleID
+    const instZones = [];
+    for (let i = 0; i < inst.length; i++) {
+      const a = inst[i].bag, b = (inst[i + 1] ? inst[i + 1].bag : ibag.length);
+      const zones = [];
+      for (let z = a; z < b && z < ibag.length; z++) {
+        const g = genRange(igen, ibag[z].gen, (ibag[z + 1] ? ibag[z + 1].gen : igen.length));
+        const kr = g.get(GEN.keyRange);
+        const sid = g.get(43); // sampleID (không phải velRange ở tầng này)
+        if (sid == null) continue;
+        zones.push({
+          sampleId: sid, keyLo: kr == null ? 0 : kr & 0xff, keyHi: kr == null ? 127 : (kr >> 8) & 0xff,
+          velLo: 0, velHi: 127, g,
+        });
+      }
+      instZones.push(zones);
+    }
+
+    // preset zones → tham chiếu instrument + range
+    const presets = [];
+    for (let i = 0; i < phdr.length - 1; i++) {
+      const a = phdr[i].bag, b = phdr[i + 1].bag;
+      const zones = [];
+      for (let z = a; z < b && z < pbag.length; z++) {
+        const g = genRange(pgen, pbag[z].gen, (pbag[z + 1] ? pbag[z + 1].gen : pgen.length));
+        const instId = g.get(GEN.instrument);
+        if (instId == null) continue;
+        const kr = g.get(GEN.keyRange), vr = g.get(43); // preset-level: 43 = velRange
+        zones.push({
+          inst: instId,
+          keyLo: kr == null ? 0 : kr & 0xff, keyHi: kr == null ? 127 : (kr >> 8) & 0xff,
+          velLo: vr == null ? 0 : vr & 0xff, velHi: vr == null ? 127 : (vr >> 8) & 0xff,
+        });
+      }
+      if (zones.length) presets.push({ name: phdr[i].name, bank: phdr[i].bank, prog: phdr[i].prog, zones });
+    }
+    return { presets, instZones, shdr, smplOff, smplLen, u8, dv, name: '' };
+  }
+
+  function tc2s(tc) { return tc <= -32768 ? 0 : Math.pow(2, tc / 1200); }
+
+  class SFPlayer {
+    constructor(ctx, sf, opts) {
+      this.ctx = ctx; this.sf = sf;
+      this.maxVoices = (opts && opts.maxVoices) || 64;
+      this.voices = 0; this.skipped = 0;
+      this.master = ctx.createGain(); this.master.gain.value = (opts && opts.volume) || 0.9;
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -14; comp.ratio.value = 5;
+      this.master.connect(comp); comp.connect(ctx.destination);
+      this.bufCache = new Map();
+      this.active = new Set();
+    }
+    setVolume(v) { try { this.master.gain.setTargetAtTime(v, this.ctx.currentTime, 0.03); } catch (e) {} }
+    sampleBuf(sId) {
+      let b = this.bufCache.get(sId);
+      if (b) return b;
+      const sf = this.sf, s = sf.shdr[sId];
+      if (!s) return null;
+      let start = s.start + (0), end = s.end;
+      const len = Math.max(16, end - start);
+      if (start + len > sf.smplLen / 2) return null;
+      b = this.ctx.createBuffer(1, len, s.rate || 22050);
+      const ch = b.getChannelData(0);
+      const off = sf.smplOff + start * 2;
+      for (let i = 0; i < len; i++) {
+        const v = sf.dv.getInt16(off + i * 2, true);
+        ch[i] = v / 32768;
+      }
+      this.bufCache.set(sId, b);
+      return b;
+    }
+    presetFor(chan, prog) {
+      const bank = chan === 9 ? 128 : 0;
+      const sf = this.sf;
+      let pick = null, fb = null;
+      for (const p of sf.presets) {
+        if (p.bank === 0 && p.prog === 0) fb = fb || p;
+        if (p.bank === bank && p.prog === prog) { pick = p; break; }
+      }
+      return pick || fb || sf.presets[0];
+    }
+    /* phát 1 note; dur != null → tự hẹn tắt (chế độ phát bài), dur == null → chờ release() */
+    noteOn(key, vel, when, dur, chan, prog) {
+      if (this.voices >= this.maxVoices) { this.skipped++; return null; }
+      const preset = this.presetFor(chan || 0, prog == null ? 0 : prog);
+      if (!preset) return null;
+      const v = vel / 127;
+      let started = 0;
+      for (const pz of preset.zones) {
+        if (key < pz.keyLo || key > pz.keyHi || vel < pz.velLo || vel > pz.velHi) continue;
+        const zones = this.sf.instZones[pz.inst] || [];
+        for (const iz of zones) {
+          if (key < iz.keyLo || key > iz.keyHi || vel < iz.velLo || vel > iz.velHi) continue;
+          if (started >= 2) break;
+          if (this._voice(iz, key, vel, when, dur, chan || 0)) started++;
+          if (this.voices >= this.maxVoices) break;
+        }
+        if (started) break;
+      }
+      return started ? true : null;
+    }
+    _voice(iz, key, vel, when, dur, chan) {
+      const ctx = this.ctx, g0 = iz.g, s = this.sf.shdr[iz.sampleId];
+      if (!s) return false;
+      const buf = this.sampleBuf(iz.sampleId);
+      if (!buf) return false;
+      const root = g0.get(GEN.rootKey) != null ? g0.get(GEN.rootKey) : (s.pitch || 60);
+      const coarse = g0.get(GEN.coarseTune) || 0, fine = g0.get(GEN.fineTune) || 0;
+      const rate = Math.pow(2, (key - (root < 0 || root > 127 ? 60 : root)) / 12 + (coarse + (fine + (s.corr || 0)) / 100) / 12)
+        * (buf.sampleRate / ctx.sampleRate);
+      const src = ctx.createBufferSource();
+      src.buffer = buf; src.playbackRate.value = Math.max(0.01, Math.min(24, rate));
+      const modes = g0.get(GEN.sampleModes) || 0;
+      if (modes & 1 && s.endLoop > s.startLoop) {
+        src.loop = true;
+        const so = (g0.get(GEN.startLoop) || 0) + 32768 * (g0.get(GEN.startLoopCoarse) || 0);
+        const eo = (g0.get(GEN.endLoop) || 0) + 32768 * (g0.get(GEN.endLoopCoarse) || 0);
+        const ls = Math.max(0, s.startLoop + so - s.start) / buf.sampleRate;
+        const le = Math.min(buf.duration, (s.endLoop + eo - s.start) / buf.sampleRate);
+        if (le > ls + 0.002) { src.loopStart = ls; src.loopEnd = le; }
+      }
+      const pan = ((g0.get(GEN.pan) || 0) / 500);
+      const out = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+      if (out) out.pan.value = Math.max(-1, Math.min(1, pan));
+      const gain = ctx.createGain();
+      const att = Math.max(0, g0.get(GEN.attenuation) || 0);
+      const vol = Math.pow(10, -att / 200) * Math.pow(vel / 127, 1.5) * 0.85;
+      const attack = Math.max(0.002, Math.min(4, tc2s(g0.get(GEN.attackVol) != null ? g0.get(GEN.attackVol) : -12000)));
+      const hold = Math.min(8, tc2s(g0.get(GEN.holdVol) != null ? g0.get(GEN.holdVol) : -12000) * Math.pow(2, ((60 - key) * (g0.get(GEN.keyToHold) || 0)) / 1200));
+      const decay = Math.max(0.01, Math.min(8, tc2s(g0.get(GEN.decayVol) != null ? g0.get(GEN.decayVol) : -12000) * Math.pow(2, ((60 - key) * (g0.get(GEN.keyToDecay) || 0)) / 1200)));
+      const susCB = Math.max(0, Math.min(1440, g0.get(GEN.sustainVol) || 0));
+      const susLvl = vol * Math.pow(10, -susCB / 200);
+      const rel = Math.max(0.03, Math.min(6, tc2s(g0.get(GEN.releaseVol) != null ? g0.get(GEN.releaseVol) : -12000)));
+      const t0 = Math.max(when, ctx.currentTime + 0.01);
+      const gn = gain.gain;
+      gn.setValueAtTime(0.0001, t0);
+      gn.linearRampToValueAtTime(Math.max(0.001, vol), t0 + attack);
+      gn.setTargetAtTime(Math.max(0.0006, susLvl), t0 + attack + hold, Math.max(0.01, decay / 4));
+      src._key = dur == null ? key : null; src._chan = chan;
+      const off = dur != null ? t0 + dur : null;
+      if (off != null) {
+        gn.setTargetAtTime(0.0001, off, Math.max(0.01, rel / 4));
+        try { src.stop(off + rel + 0.15); } catch (e) {}
+      }
+      src.connect(gain);
+      gain.connect(out || this.master);
+      if (out) out.connect(this.master);
+      const me = this;
+      src.onended = () => { me.voices--; me.active.delete(src); };
+      this.voices++; this.active.add(src);
+      try { src.start(t0); } catch (e) { this.voices--; this.active.delete(src); return false; }
+      src._gain = gain; src._off = off;
+      return true;
+    }
+    /* tắt các voice live đang giữ của key (chế độ live: dur = null) */
+    release(key, chan) {
+      const now = this.ctx.currentTime;
+      for (const src of this.active) {
+        if (src._key === key && src._off == null) {
+          const rel = 0.35;
+          try { src._gain.gain.setTargetAtTime(0.0001, now, rel / 4); src.stop(now + rel + 0.1); } catch (e) {}
+          src._off = now;
+        }
+      }
+    }
+    allOff() {
+      const now = this.ctx.currentTime;
+      for (const src of this.active) {
+        try { if (src._gain) src._gain.gain.setTargetAtTime(0.0001, now, 0.02); src.stop(now + 0.08); } catch (e) {}
+      }
+      this.voices = 0;
+    }
+  }
+
+  global.TSSF2 = { parseSF2, SFPlayer };
+  if (typeof module !== 'undefined' && module.exports) module.exports = global.TSSF2;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — TetoSynth: nhạc số nội bộ (không cần SoundFont), Web Audio
+   Chất "điện piano" đơn giản: 2 saw detune + sine octave cao, lowpass sập dần. */
+(function (global) {
+  'use strict';
+
+  class TetoSynth {
+    constructor(ctx) {
+      this.ctx = ctx;
+      this.master = ctx.createGain(); this.master.gain.value = 0.85;
+      const comp = ctx.createDynamicsCompressor();
+      comp.threshold.value = -16; comp.ratio.value = 6; comp.attack.value = 0.003;
+      this.master.connect(comp); comp.connect(ctx.destination);
+      // hồi âm rẻ: delay feedback ngắn
+      this.bus = ctx.createGain(); this.bus.gain.value = 1;
+      this.bus.connect(this.master);
+      this.wet = ctx.createGain(); this.wet.gain.value = 0.16;
+      const d = ctx.createDelay(0.6); d.delayTime.value = 0.11;
+      const fb = ctx.createGain(); fb.gain.value = 0.3;
+      this.bus.connect(d); d.connect(fb); fb.connect(d); d.connect(this.wet); this.wet.connect(this.master);
+
+      this.maxVoices = 48;
+      this.voices = 0; this.skipped = 0;
+      this.live = new Map();   // key → voice (chơi trực tiếp)
+      this.active = new Set(); // mọi voice đang hẹn
+    }
+    setVolume(v) { try { this.master.gain.setTargetAtTime(v, this.ctx.currentTime, 0.03); } catch (e) {} }
+
+    _mk(key, vel, when) {
+      const ctx = this.ctx;
+      const f = 440 * Math.pow(2, (key - 69) / 12);
+      const o1 = ctx.createOscillator(); o1.type = 'sawtooth'; o1.frequency.value = f;
+      const o2 = ctx.createOscillator(); o2.type = 'sawtooth'; o2.frequency.value = f * 1.0055;
+      const o3 = ctx.createOscillator(); o3.type = 'sine'; o3.frequency.value = f * 2;
+      const g3 = ctx.createGain(); g3.gain.value = 0.22;
+      const filt = ctx.createBiquadFilter(); filt.type = 'lowpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(Math.min(14000, 9000 + vel * 40), when);
+      filt.frequency.setTargetAtTime(Math.max(320, f * 2.2), when + 0.01, 0.4);
+      const g = ctx.createGain();
+      const panner = ctx.createStereoPanner ? ctx.createStereoPanner() : null;
+      const pan = Math.max(-0.7, Math.min(0.7, (key - 60) / 28));
+      if (panner) panner.pan.value = pan;
+      const v = Math.pow(vel / 127, 1.4) * 0.30;
+      o1.connect(filt); o2.connect(filt); o3.connect(g3); g3.connect(filt);
+      filt.connect(g); g.connect(panner || this.bus);
+      if (panner) panner.connect(this.bus);
+      return { o1, o2, o3, filt, g, v, f };
+    }
+    /* note có sẵn thời điểm + độ dài (phát bài) */
+    play(key, vel, when, dur) {
+      if (this.voices >= this.maxVoices) { this.skipped++; return; }
+      const ctx = this.ctx;
+      const v = this._mk(key, vel, when);
+      const g = v.g.gain;
+      g.setValueAtTime(0.0001, when);
+      g.linearRampToValueAtTime(v.v, when + 0.006);
+      g.setTargetAtTime(v.v * 0.28, when + 0.02, Math.min(1.2, Math.max(0.25, dur * 0.55)));
+      const off = when + Math.max(0.06, dur);
+      g.setTargetAtTime(0.0001, off, 0.09);
+      const stopAt = off + 0.5;
+      const me = this;
+      [v.o1, v.o2, v.o3].forEach(o => { o.start(when); o.stop(stopAt); me.active.add(o); });
+      // dem 1 voice/note: chi giam khi o1 ket thuc (tranh dem am)
+      v.o1.onended = () => { me.voices = Math.max(0, me.voices - 1); [v.o1, v.o2, v.o3].forEach(o => me.active.delete(o)); };
+      this.voices++;
+      v.o1._gainNode = v.g;
+    }
+    /* chơi trực tiếp (Free Play / MIDI device / QWERTY) */
+    press(key, vel) {
+      if (this.voices >= this.maxVoices) { this.skipped++; return; }
+      if (this.live.has(key)) this.release(key);
+      const ctx = this.ctx, now = ctx.currentTime;
+      const v = this._mk(key, vel, now + 0.001);
+      const g = v.g.gain;
+      g.setValueAtTime(0.0001, now + 0.001);
+      g.linearRampToValueAtTime(v.v, now + 0.008);
+      g.setTargetAtTime(v.v * 0.32, now + 0.03, 0.5);
+      [v.o1, v.o2, v.o3].forEach(o => { o.start(now + 0.001); this.active.add(o); });
+      const me = this;
+      v.o1.onended = () => { me.voices = Math.max(0, me.voices - 1); [v.o1, v.o2, v.o3].forEach(o => me.active.delete(o)); };
+      this.voices++;
+      this.live.set(key, v);
+    }
+    release(key) {
+      const ctx = this.ctx, now = ctx.currentTime;
+      const v = this.live.get(key);
+      if (!v) return;
+      v.g.gain.setTargetAtTime(0.0001, now, 0.08);
+      [v.o1, v.o2, v.o3].forEach(o => { try { o.stop(now + 0.5); } catch (e) {} });
+      this.live.delete(key);
+    }
+    allOff() {
+      const now = this.ctx.currentTime;
+      for (const [, v] of this.live) {
+        try { v.g.gain.setTargetAtTime(0.0001, now, 0.03); [v.o1, v.o2, v.o3].forEach(o => o.stop(now + 0.1)); } catch (e) {}
+      }
+      this.live.clear();
+      for (const o of this.active) {
+        try { o.onended = null; if (o._gainNode) o._gainNode.gain.setTargetAtTime(0.0001, now, 0.02); o.stop(now + 0.08); } catch (e) {}
+      }
+      this.active.clear();
+      this.voices = 0;
+    }
+  }
+
+  global.TSSynth = { TetoSynth };
+  if (typeof module !== 'undefined' && module.exports) module.exports = global.TSSynth;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — tạo bài hát trong bộ nhớ (SoA) + Black MIDI stress test procedural */
+(function (global) {
+  'use strict';
+
+  /* gom các mảng thô thành song object (đã sort theo thời gian bắt đầu) */
+  function makeSong(st, en, key, vel, chan, trk, ppq, tempos) {
+    const n = st.length;
+    const idx = new Int32Array(n);
+    for (let i = 0; i < n; i++) idx[i] = i;
+    idx.sort((a, b) => (st[a] - st[b]) || (key[a] - key[b]));
+    const o = {
+      ppq: ppq || 480, trackCount: 1, noteCount: n, truncated: false,
+      duration: 0,
+      start: new Float64Array(n), end: new Float64Array(n),
+      key: new Uint8Array(n), vel: new Uint8Array(n),
+      chan: new Uint8Array(n), track: new Uint8Array(n),
+      tempos: tempos || [{ tick: 0, uspq: 500000 }], programs: {},
+    };
+    for (let i = 0; i < n; i++) {
+      const j = idx[i];
+      o.start[i] = st[j]; o.end[i] = en[j];
+      o.key[i] = key[j]; o.vel[i] = vel[j]; o.chan[i] = chan[j]; o.track[i] = trk[j];
+    }
+    if (n) o.duration = o.end[idx[n - 1]];
+    return o;
+  }
+
+  /* Black MIDI stress test: sinh trực tiếp vào bộ nhớ (~90–130k note / ~75 giây)
+     — không cần file, kiểm tra đúng điểm mạnh của renderer */
+  function genStressSong() {
+    const bpm = 150, ppq = 480;
+    const spb = 60 / bpm;            // giây / phách
+    const s16 = spb / 4;             // giây / phân 16
+    const steps = 750;               // ~75 giây
+    const st = [], en = [], key = [], vel = [], chan = [], trk = [];
+
+    const chord = [0, 3, 7, 10, 12, 15, 19, 22, 24, 27, 31];
+    const roots = [33, 38, 40, 45, 31, 36, 40, 43]; // vòng hoà âm
+    let seed = 20261112;
+    const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+
+    for (let s = 0; s < steps; s++) {
+      const t = s * s16;
+      const root = roots[(s >> 3) % roots.length];
+
+      // lớp 1: chồng hợp âm 7 quãng tám × 11 bậc (Black MIDI kiểu "chord stack")
+      {
+        for (let os = 0; os < 8; os++) {
+          for (let c = 0; c < chord.length; c++) {
+            const k = root + chord[c] + 12 * os;
+            if (k > 20 && k < 106) {
+              st.push(t); en.push(t + s16 * 1.9);
+              key.push(k); vel.push(30 + ((c * 7 + os * 3) % 40));
+              chan.push(c % 16); trk.push(0);
+            }
+          }
+        }
+      }
+      // lớp 2: run 32 bit — hai "tay" chạy ngược chiều
+      const rp = s * 2;
+      for (let h = 0; h < 2; h++) {
+        const k = 36 + ((rp + (h ? 7 : 0)) % 24) + (h ? 24 : 0) + 12 * (h ? 1 : 0);
+        st.push(t + h * s16 / 2); en.push(t + h * s16 / 2 + s16 * 0.9);
+        key.push(Math.min(103, k)); vel.push(70 + h * 10);
+        chan.push(8 + h); trk.push(1);
+      }
+      // lớp 3: trill 16 bit dồn dập ×20 quãng tám
+      for (let os = 0; os < 20; os++) {
+        const k = Math.max(21, Math.min(108, 28 + 12 * os + (s % 2 ? 7 : 4)));
+        st.push(t + s16 / 2); en.push(t + s16 * 1.4);
+        key.push(k); vel.push(50); chan.push(2); trk.push(2);
+      }
+      // lớp 4: mỗi bước lệ một "burst" 32 note quét ngang
+      if (s % 2 === 1) {
+        for (let b = 0; b < 32; b++) {
+          const k = 24 + b * 2.6 + rnd() * 3;
+          st.push(t + b * s16 / 32 * 2); en.push(t + b * s16 / 32 * 2 + s16 * 3);
+          key.push(Math.max(21, Math.min(108, Math.round(k))));
+          vel.push(45 + (b % 30)); chan.push(b % 16); trk.push(3);
+        }
+      }
+      // lớp 5: glissando 88 phím mỗi 2 bước
+      if (s % 2 === 0) {
+        for (let k = 21; k <= 108; k++) {
+          st.push(t + (k - 21) * s16 / 90); en.push(t + (k - 21) * s16 / 90 + s16 * 3.6);
+          key.push(k); vel.push(38); chan.push((k + s) % 16); trk.push(4);
+        }
+      }
+    }
+    return makeSong(
+      Float64Array.from(st), Float64Array.from(en),
+      Uint8Array.from(key), Uint8Array.from(vel),
+      Uint8Array.from(chan), Uint8Array.from(trk),
+      ppq, [{ tick: 0, uspq: Math.round(60e6 / bpm) }]
+    );
+  }
+
+  global.TSSong = { makeSong, genStressSong };
+  if (typeof module !== 'undefined' && module.exports) module.exports = global.TSSong;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — renderer canvas: 2D falling notes + chế độ 3D + glow (đơn sắc) */
+(function (global) {
+  'use strict';
+
+  const A0 = 21, C8 = 108;
+  const BLACK_PC = new Set([1, 3, 6, 8, 10]);
+
+  function buildKeyMap() {
+    const isBlack = new Uint8Array(128);
+    const wIdx = new Int16Array(128).fill(-1);
+    let w = 0;
+    for (let k = A0; k <= C8; k++) {
+      const pc = k % 12;
+      if (BLACK_PC.has(pc)) isBlack[k] = 1;
+      else wIdx[k] = w++;
+    }
+    return { isBlack, wIdx, whiteCount: w };
+  }
+  const KM = buildKeyMap();
+
+  const PALETTES = {
+    trang:  { name: 'Trắng',     c: ['#ffffff', '#c2c2c2'] },
+    bac:    { name: 'Bạc',       c: ['#e8ecf1', '#9aa5b1'] },
+    luc:    { name: 'Lục nhạt',  c: ['#e6fbe6', '#93d6a0'] },
+    ho:     { name: 'Hổ phách',  c: ['#fff3d6', '#e8c26a'] },
+    hong:   { name: 'Hồng Teto', c: ['#ffe4ee', '#f191b5'] },
+    kenh:   { name: 'Theo kênh', c: ['#f5f5f5', '#d9d9d9', '#bdbdbd', '#a6a6a6', '#8f8f8f', '#e6e6e6'] },
+  };
+
+  class Renderer {
+    constructor(canvas) {
+      this.cv = canvas; this.ctx2d = canvas.getContext('2d');
+      this.W = 1280; this.H = 720;
+      this.fall = 240;          // px/s
+      this.mode3d = false;
+      this.glow = true;
+      this.paletteKey = 'trang';
+      this.customColor = null;
+      this.pressed = new Uint8Array(128); // trạng thái nhấn (visual)
+      this.particles = [];
+      this.spriteCache = new Map();
+      this.resize();
+    }
+    palette() {
+      if (this.customColor) {
+        return { name: (global.TSI18N ? global.TSI18N.T('palCustom') : 'Custom'), c: [this.customColor, this.customColor] };
+      }
+      return PALETTES[this.paletteKey] || PALETTES.trang;
+    }
+    colorOf(note) {
+      const p = this.palette().c;
+      if (this.customColor) return p[0];
+      if (this.paletteKey === 'kenh') return p[note % p.length];
+      return p[KM.isBlack[note] ? 1 : 0];
+    }
+    resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.W = window.innerWidth; this.H = window.innerHeight;
+      this.cv.width = Math.round(this.W * dpr); this.cv.height = Math.round(this.H * dpr);
+      this.cv.style.width = this.W + 'px'; this.cv.style.height = this.H + 'px';
+      this.ctx2d.setTransform(dpr, 0, 0, dpr, 0, 0);
+      this.keyH = Math.max(64, Math.min(120, this.H * 0.16));
+      this.keyW = this.W / KM.whiteCount;
+    }
+    /* hình học phím */
+    keyGeom(k) {
+      if (k < A0 || k > C8) return null;
+      const black = KM.isBlack[k];
+      const kw = this.keyW;
+      if (!black) return { x: KM.wIdx[k] * kw, w: kw, black: 0 };
+      // phím đen: đặt ở biên giữa hai phím trắng lân cận
+      let left = k - 1; while (left >= A0 && KM.isBlack[left]) left--;
+      const boundary = (KM.wIdx[left] + 1) * kw;
+      const bw = kw * 0.56;
+      return { x: boundary - bw / 2, w: bw, black: 1 };
+    }
+    hitY() { return this.H - this.keyH; }
+
+    glowSprite(color) {
+      let s = this.spriteCache.get(color);
+      if (s) return s;
+      s = document.createElement('canvas'); s.width = 64; s.height = 64;
+      const c = s.getContext('2d');
+      const g = c.createRadialGradient(32, 32, 2, 32, 32, 32);
+      try { g.addColorStop(0, color); } catch (e) { g.addColorStop(0, '#ffffff'); }
+      g.addColorStop(1, 'rgba(0,0,0,0)');
+      c.globalAlpha = 1;
+      c.fillStyle = g;
+      c.fillRect(0, 0, 64, 64);
+      this.spriteCache.set(color, s);
+      return s;
+    }
+    spawnBurst(x, y, color) {
+      if (this.particles.length > 420) return;
+      for (let i = 0; i < 3; i++) {
+        this.particles.push({
+          x, y, vx: (Math.random() - 0.5) * 90, vy: -(40 + Math.random() * 130),
+          life: 0.45 + Math.random() * 0.25, t: 0, c: color,
+        });
+      }
+    }
+
+    /* ===== khung chính ===== */
+    drawFrame(app, dt, now) {
+      const c = this.ctx2d, W = this.W, H = this.H;
+      c.fillStyle = '#000'; c.fillRect(0, 0, W, H);
+      if (app.song && app.stageMode === 'player') {
+        if (this.mode3d) this.draw3D(app, now);
+        else this.draw2D(app, now);
+      } else if (app.stageMode === 'free') {
+        this.drawAmbientTrails(app, now);
+      } else {
+        this.drawAmbient(app, dt, now);
+      }
+      this.drawKeyboard(app);
+      this.drawParticles(dt);
+    }
+
+    /* ----- nền khi ở menu/lib/settings: dải note rơi nhẹ nhàng trang trí ----- */
+    drawAmbient(app, dt, now) {
+      const c = this.ctx2d, W = this.W, H = this.H;
+      const t = now / 1000;
+      c.globalAlpha = 0.16;
+      const cols = 6;
+      for (let i = 0; i < cols; i++) {
+        const x = (0.12 + 0.15 * i) * W;
+        const phase = (t * 0.18 + i * 0.37) % 1;
+        const h = H * (0.10 + 0.13 * ((i * 7) % 5) / 5);
+        const y = -h + phase * (H + h);
+        c.fillStyle = i % 2 ? '#e0e0e0' : '#7a7a7a';
+        c.fillRect(x, y, this.keyW * 0.85, h);
+      }
+      c.globalAlpha = 1;
+    }
+
+    /* ----- 2D: note rơi ----- */
+    draw2D(app, now) {
+      const c = this.ctx2d, W = this.W, H = this.H;
+      const hitY = this.hitY(), pps = this.fall;
+      const song = app.song, T = app.transport;
+      const viewTime = (hitY + 40) / pps;
+      const perChan = !this.customColor && this.paletteKey === 'kenh';
+      const twoTone = !this.customColor && !perChan;
+      const pal = perChan ? PALETTES.kenh.c
+        : (twoTone ? (PALETTES[this.paletteKey] || PALETTES.trang).c
+        : [this.customColor || '#f5f5f5']);
+      const glowOn = this.glow;
+
+      app.enterVisual(T, viewTime);
+
+      let vis = 0;
+      const act = app.activeVisual;
+      for (let i = 0; i < act.length; i++) {
+        const n = act[i];
+        const t1 = song.end[n];
+        if (t1 < T - 0.6) { act[i] = act[act.length - 1]; act.pop(); i--; continue; }
+      }
+
+      // vẽ theo lô màu
+      const NG = pal.length;
+      const groups = this._groups || (this._groups = []);
+      while (groups.length < NG) groups.push([]);
+      for (const gr of groups) gr.length = 0;
+      let glowCount = 0;
+      for (let i = 0; i < act.length; i++) {
+        const n = act[i];
+        const t0 = song.start[n], t1 = song.end[n];
+        if (t0 > T + viewTime) continue;
+        const g = this.keyGeom(song.key[n]);
+        if (!g) continue;
+        let yBot = hitY - (t0 - T) * pps;
+        let yTop = hitY - (t1 - T) * pps;
+        if (t0 < T) yBot = hitY + Math.min((T - t0) * pps, 26);
+        if (yTop > hitY + 30 || yBot < -30) continue;
+        const gi = perChan ? (song.chan[n] % NG) : (twoTone && KM.isBlack[song.key[n]] ? 1 : 0);
+        groups[gi].push(n, g.x, g.w, yTop, Math.max(3, yBot - yTop));
+        vis++; if (glowOn) glowCount++;
+      }
+      for (let gi = 0; gi < NG; gi++) {
+        const arr = groups[gi];
+        if (!arr.length) continue;
+        const col = pal[gi % pal.length];
+        // glow
+        if (glowOn && glowCount < 1400) {
+          const sp = this.glowSprite(col);
+          c.globalCompositeOperation = 'lighter';
+          c.globalAlpha = 0.5;
+          for (let j = 0; j < arr.length; j += 5) {
+            const x = arr[j + 1], w = arr[j + 2], yT = arr[j + 3], hh = arr[j + 4];
+            const gw = w * 2.6, gh = Math.min(hh * 1.5 + 30, 260);
+            c.drawImage(sp, x - (gw - w) / 2, yT + hh / 2 - gh / 2, gw, gh);
+          }
+          c.globalAlpha = 1;
+          c.globalCompositeOperation = 'source-over';
+        }
+        c.fillStyle = col;
+        for (let j = 0; j < arr.length; j += 5) {
+          const x = arr[j + 1], w = arr[j + 2], yT = arr[j + 3], hh = arr[j + 4];
+          if (vis > 4000) c.fillRect(x + 0.5, yT, w - 1, hh);
+          else { c.fillRect(x + 0.5, yT, w - 1.4, hh); c.fillStyle = 'rgba(0,0,0,0.25)'; c.fillRect(x + 0.5, yT, w - 1.4, Math.min(3, hh)); c.fillStyle = col; }
+        }
+      }
+
+      // vệt sáng trên phím khi note chạm
+      c.fillStyle = 'rgba(255,255,255,0.85)';
+      for (let i = 0; i < act.length; i++) {
+        const n = act[i];
+        const t0 = song.start[n];
+        if (t0 <= T && T < song.end[n]) {
+          const g = this.keyGeom(song.key[n]);
+          if (!g) continue;
+          c.globalAlpha = 0.5 + 0.5 * (1 - (T - t0) / 0.2);
+          c.fillRect(g.x, hitY, g.w, 3);
+          if (glowOn && vis < 1400 && T - t0 < 0.03) {
+            this.spawnBurst(g.x + g.w / 2, hitY, this.colorOf(song.key[n]));
+          }
+          c.globalAlpha = 1;
+        }
+      }
+
+      // separators mờ
+      c.strokeStyle = 'rgba(255,255,255,0.045)'; c.lineWidth = 1;
+      c.beginPath();
+      for (let k = A0; k <= C8; k++) {
+        if (!KM.isBlack[k]) { const x = Math.round(KM.wIdx[k] * this.keyW) + 0.5; c.moveTo(x, 0); c.lineTo(x, hitY); }
+      }
+      c.stroke();
+
+      app.stats.visible = vis;
+    }
+
+    /* ----- 3D: phối cảnh trên mặt phẳng ----- */
+    draw3D(app, now) {
+      const c = this.ctx2d, W = this.W, H = this.H;
+      const horizon = H * 0.16, kbTop = this.hitY();
+      const d0 = 0.9;                 // khoảng cách cận (đơn vị "giây")
+      const cx = W / 2;
+      const T = app.transport, song = app.song;
+      const viewTime = 3.2;
+      const cols = this.palette().c;
+      const twoTone = !this.customColor && this.paletteKey !== 'kenh';
+
+      app.enterVisual(T, viewTime);
+      const act = app.activeVisual;
+      for (let i = 0; i < act.length; i++) {
+        const n = act[i];
+        if (song.end[n] < T - 0.5) { act[i] = act[act.length - 1]; act.pop(); i--; }
+      }
+      // sort theo khoảng cách (xa → gần)
+      const order = this._order || (this._order = []);
+      order.length = 0;
+      for (const n of act) if (song.start[n] < T + viewTime) order.push(n);
+      order.sort((a, b) => song.start[b] - song.start[a]);
+
+      function proj(d, x, h) {
+        const k = d0 / (d + d0);
+        return { x: cx + (x - cx) * k, y: horizon + (kbTop - horizon) * k - h * k * 0.55, k };
+      }
+      // sàn + lưới
+      c.strokeStyle = 'rgba(255,255,255,0.05)'; c.lineWidth = 1;
+      c.beginPath();
+      for (let d = 1; d <= 12; d += d < 4 ? 1 : 2) {
+        const pA = proj(d, 0, 0), pB = proj(d, W, 0);
+        c.moveTo(0, pA.y); c.lineTo(W, pB.y);
+      }
+      c.stroke();
+      c.beginPath();
+      for (let k = A0; k <= C8; k++) {
+        if (KM.isBlack[k]) continue;
+        const x = KM.wIdx[k] * this.keyW;
+        const p0 = proj(0, x, 0), p1 = proj(14, x, 0);
+        c.moveTo(p0.x, p0.y); c.lineTo(p1.x, p1.y);
+      }
+      c.stroke();
+
+      let vis = 0;
+      const keyW = this.keyW;
+      for (const n of order) {
+        const t0 = song.start[n], t1 = song.end[n];
+        if (t1 < T - 0.4) continue;
+        const g = this.keyGeom(song.key[n]);
+        if (!g) continue;
+        const d0s = Math.max(0, t0 - T), d1s = Math.max(0, t1 - T);
+        const h = Math.min(0.9, (t1 - t0) * 0.5);
+        const pTL = proj(d1s, g.x, h), pTR = proj(d1s, g.x + g.w, h);
+        const pBL = proj(d0s, g.x, h), pBR = proj(d0s, g.x + g.w, h);
+        if (pBL.y > H + 40) continue;
+        const col = twoTone ? cols[KM.isBlack[song.key[n]] ? 1 : 0] : cols[0];
+        c.fillStyle = col;
+        c.beginPath();
+        c.moveTo(pTL.x, pTL.y); c.lineTo(pTR.x, pTR.y);
+        c.lineTo(pBR.x, pBR.y); c.lineTo(pBL.x, pBL.y);
+        c.closePath(); c.fill();
+        // mặt trên sáng hơn nhẹ
+        c.fillStyle = 'rgba(255,255,255,0.28)';
+        c.fillRect(Math.min(pTL.x, pTR.x), pTL.y, Math.abs(pTR.x - pTL.x), Math.max(1.5, 2 * pTR.k));
+        vis++;
+      }
+
+      // đường hit
+      const ph0 = proj(0, 0, 0), ph1 = proj(0, W, 0);
+      c.fillStyle = 'rgba(255,255,255,0.5)';
+      c.fillRect(0, ph0.y - 1.5, W, 2.5);
+      app.stats.visible = vis;
+    }
+
+    /* ----- Free Play: vệt note dâng lên khi chơi ----- */
+    drawAmbientTrails(app, now) {
+      const c = this.ctx2d, hitY = this.hitY(), pps = this.fall * 0.8;
+      const trails = app.trails;
+      const col = this.palette().c[0];
+      for (let i = 0; i < trails.length; i++) {
+        const tr = trails[i];
+        const t1 = tr.tEnd || now;
+        const y = hitY - (t1 - tr.tStart) * pps;
+        const h = Math.max(4, (t1 - tr.tStart) * pps);
+        if (y > hitY + 4) { trails.splice(i, 1); i--; continue; }
+        const g = this.keyGeom(tr.key);
+        if (!g) continue;
+        c.fillStyle = col;
+        c.globalAlpha = 0.85;
+        c.fillRect(g.x + 1, y, g.w - 2, h);
+        c.globalAlpha = 1;
+        if (this.glow) {
+          const sp = this.glowSprite(col);
+          c.globalCompositeOperation = 'lighter'; c.globalAlpha = 0.4;
+          c.drawImage(sp, g.x - g.w, y - 20, g.w * 3, h + 40);
+          c.globalAlpha = 1; c.globalCompositeOperation = 'source-over';
+        }
+      }
+    }
+
+    drawKeyboard(app) {
+      const c = this.ctx2d, W = this.W, H = this.H;
+      const kbY = this.hitY(), kh = this.keyH, kw = this.keyW;
+      if (app.stageMode && this.mode3d && app.song && app.stageMode === 'player') {
+        // bàn phím phẳng dưới đáy (giữ khả năng chơi)
+        c.fillStyle = 'rgba(255,255,255,0.05)'; c.fillRect(0, kbY + kh * 0.35, W, kh * 0.65);
+      }
+      // phím trắng
+      for (let k = A0; k <= C8; k++) {
+        if (KM.isBlack[k]) continue;
+        const x = KM.wIdx[k] * kw;
+        const pressed = this.pressed[k];
+        c.fillStyle = pressed ? '#ffffff' : '#ececec';
+        c.fillRect(x + 0.5, kbY, kw - 1.2, kh);
+        if (pressed) {
+          c.fillStyle = 'rgba(255,255,255,0.35)';
+          c.fillRect(x + 0.5, kbY, kw - 1.2, 14);
+        }
+        c.fillStyle = '#000';
+        c.fillRect(x + kw - 1.4, kbY, 1.4, kh);
+        const pc = k % 12;
+        if (pc === 0 && this.keyW > 9) {
+          c.fillStyle = 'rgba(0,0,0,0.45)';
+          c.font = '10px monospace'; c.textAlign = 'center';
+          c.fillText('C' + (Math.floor(k / 12) - 1), x + kw / 2, kbY + kh - 6);
+        }
+      }
+      // phím đen
+      for (let k = A0; k <= C8; k++) {
+        if (!KM.isBlack[k]) continue;
+        const g = this.keyGeom(k);
+        const pressed = this.pressed[k];
+        c.fillStyle = pressed ? '#5d5d5d' : '#141414';
+        c.fillRect(g.x, kbY, g.w, kh * 0.62);
+        c.strokeStyle = pressed ? '#ffffff' : 'rgba(255,255,255,0.28)';
+        c.lineWidth = 1;
+        c.strokeRect(g.x + 0.5, kbY + 0.5, g.w - 1, kh * 0.62 - 1);
+      }
+      // đường hit
+      const hl = 'rgba(255,255,255,0.35)';
+      c.fillStyle = hl; c.fillRect(0, kbY - 2, W, 2);
+    }
+
+    drawParticles(dt) {
+      const c = this.ctx2d;
+      const ps = this.particles;
+      for (let i = 0; i < ps.length; i++) {
+        const p = ps[i];
+        p.t += dt;
+        if (p.t > p.life) { ps[i] = ps[ps.length - 1]; ps.pop(); i--; continue; }
+        p.x += p.vx * dt; p.y += p.vy * dt; p.vy += 300 * dt;
+        c.globalAlpha = Math.max(0, 1 - p.t / p.life);
+        c.fillStyle = p.c || '#fff';
+        c.fillRect(p.x, p.y, 2.5, 2.5);
+      }
+      c.globalAlpha = 1;
+    }
+  }
+
+  global.TSRender = { Renderer, PALETTES, KM, A0, C8 };
+  if (typeof module !== 'undefined' && module.exports) module.exports = global.TSRender;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+;
+/* TetoSynthesia — UI: màn hình, thư viện MIDI, cài đặt, Web MIDI, drag&drop */
+(function (global) {
+  'use strict';
+
+  const $ = (id) => document.getElementById(id);
+  const PALETTES = global.TSRender.PALETTES;
+  const T = (...a) => global.TSI18N.T(...a);
+
+  const UI = {
+    showScreen(name) {
+      for (const s of ['menu', 'lib', 'set']) $(s).classList.toggle('active', s === name);
+      const stage = name == null;
+      $('hud').classList.toggle('on', stage);
+      $('freeHint').style.display = (stage && global.App.stageMode === 'free') ? '' : 'none';
+      global.App.screen = name;
+    },
+    toast(msg, ms) {
+      const t = $('toast'); t.textContent = msg; t.classList.add('show');
+      clearTimeout(this._tt);
+      this._tt = setTimeout(() => t.classList.remove('show'), ms || 2600);
+    },
+    fmtTime(s) {
+      if (!isFinite(s) || s < 0) s = 0;
+      const m = Math.floor(s / 60), ss = Math.floor(s % 60);
+      return m + ':' + (ss < 10 ? '0' : '') + ss;
+    },
+
+    /* ---- thư viện ---- */
+    buildLibrary() {
+      const App = global.App;
+      const list = $('libList'); list.innerHTML = '';
+      const q = $('search').value.trim().toLowerCase();
+      const items = [];
+      for (const d of App.demoSongs) items.push({ name: d.name, notes: d.notes, dur: d.dur, demo: d });
+      for (const u of App.userSongs) items.push({ name: u.name, notes: u.song.noteCount, dur: u.song.duration, song: u.song });
+      if (!q) items.push({ name: T('stressLibName'), stress: true, notes: App.stressCount, dur: 75 });
+      let shown = 0;
+      for (const it of items) {
+        if (q && !it.name.toLowerCase().includes(q)) continue;
+        shown++;
+        const div = document.createElement('div');
+        div.className = 'libItem' + (it.stress ? ' stress' : '');
+        div.innerHTML = '<div class="nm"></div><div class="meta"></div>';
+        div.querySelector('.nm').textContent = it.name;
+        div.querySelector('.meta').textContent =
+          (it.notes ? T('metaNotes', App.nf(it.notes)) : '') + ' • ' + this.fmtTime(it.dur || 0);
+        div.onclick = () => {
+          if (it.stress) App.playSong(global.TSSong.genStressSong(), T('stressName'));
+          else if (it.demo) App.playDemoSong(it.demo);
+          else App.playSong(it.song, it.name);
+        };
+        list.appendChild(div);
+      }
+      if (!shown) {
+        list.innerHTML = '';
+        const e = document.createElement('div');
+        e.className = 'libEmpty';
+        e.textContent = T('libEmpty', q);
+        list.appendChild(e);
+      }
+    },
+
+    /* ---- cài đặt ---- */
+    buildSettings() {
+      const S = global.App.settings;
+      // màu note
+      const row = $('colorRow'); row.innerHTML = '';
+      for (const key of Object.keys(PALETTES)) {
+        const b = document.createElement('div');
+        b.className = 'sw' + (!S.customColor && S.palette === key ? ' sel' : '');
+        b.title = T('pal' + key.charAt(0).toUpperCase() + key.slice(1));
+        b.textContent = key === 'hong' ? '♥' : '';
+        b.style.background = PALETTES[key].c[0];
+        b.style.color = '#111';
+        b.onclick = () => { S.customColor = null; S.palette = key; global.App.saveSettings(); this.buildSettings(); };
+        row.appendChild(b);
+      }
+      const custom = document.createElement('input');
+      custom.type = 'color'; custom.value = S.customColor || '#ffffff';
+      custom.title = T('palCustom');
+      custom.oninput = () => { S.customColor = custom.value; global.App.saveSettings(); this.buildSettings(); };
+      row.appendChild(custom);
+      // toggle
+      const bindTgl = (id, key, fn) => {
+        const el = $(id);
+        el.classList.toggle('on', !!S[key]);
+        el.onclick = () => { S[key] = !S[key]; el.classList.toggle('on', S[key]); global.App.saveSettings(); if (fn) fn(); };
+      };
+      bindTgl('tglQwerty', 'qwerty');
+      bindTgl('tgl3d', 'mode3d', () => { global.App.renderer.mode3d = S.mode3d; });
+      bindTgl('tglGlow', 'glow', () => { global.App.renderer.glow = S.glow; });
+      // sliders
+      $('rgFall').value = S.fall; $('valFall').textContent = S.fall;
+      $('rgFall').oninput = () => {
+        S.fall = +$('rgFall').value; $('valFall').textContent = S.fall;
+        global.App.renderer.fall = S.fall; global.App.saveSettings();
+      };
+      $('rgVol').value = Math.round(S.vol * 100); $('valVol').textContent = Math.round(S.vol * 100);
+      $('rgVol').oninput = () => {
+        S.vol = +$('rgVol').value / 100; $('valVol').textContent = Math.round(S.vol * 100);
+        global.App.applyVolume(); global.App.saveSettings();
+      };
+      // giới hạn FPS
+      const fpsD = T('fpsDefault');
+      const FPS_PRESETS = [[30,'30'],[60,'60'],[90,'90'],[120,'120' + fpsD],[144,'144'],[240,'240'],[0,T('fpsMax')],['custom',T('fpsCustom')]];
+      const selFps = $('selFps'), inpFps = $('inpFps');
+      selFps.innerHTML = FPS_PRESETS.map(p => '<option value="' + p[0] + '">' + p[1] + '</option>').join('');
+      const known = FPS_PRESETS.some(p => String(p[0]) === String(S.fpsCap));
+      selFps.value = known ? String(S.fpsCap) : 'custom';
+      inpFps.hidden = selFps.value !== 'custom';
+      if (!inpFps.hidden) inpFps.value = +S.fpsCustom || 165;
+      selFps.onchange = () => {
+        if (selFps.value === 'custom') {
+          inpFps.hidden = false;
+          S.fpsCap = 'custom';
+          S.fpsCustom = Math.max(15, Math.min(1000, Math.round(+inpFps.value || 165)));
+        } else {
+          inpFps.hidden = true;
+          S.fpsCap = selFps.value === '0' ? 0 : +selFps.value;
+        }
+        global.App.saveSettings(); global.App.applyFps();
+      };
+      inpFps.oninput = () => {
+        S.fpsCustom = Math.max(15, Math.min(1000, Math.round(+inpFps.value || 165)));
+        global.App.saveSettings(); global.App.applyFps();
+      };
+      // ngôn ngữ
+      const selLang = $('selLang');
+      selLang.value = S.lang || 'en';
+      selLang.onchange = () => {
+        S.lang = selLang.value; global.App.saveSettings();
+        global.TSI18N.applyLang();
+        if (global.App.song && global.App.stageMode === 'player') {
+          $('songTitle').textContent = T('songCount', global.App.songName, global.App.nf(global.App.song.noteCount));
+        }
+        this.refreshSfStatus(); this.buildLibrary(); this.buildSettings();
+      };
+      this.refreshMidiDevices();
+      this.refreshSfStatus();
+    },
+
+    refreshSfStatus() {
+      const App = global.App;
+      $('sfStatus').textContent = App.sfName
+        ? T('sfHintSf', App.sfName, App.sfPresetCount)
+        : T('sfHintTeto');
+    },
+
+    /* ---- Web MIDI ---- */
+    refreshMidiDevices() {
+      const sel = $('midiDev');
+      const keep = global.App.settings.midiDeviceId;
+      const fill = (names) => {
+        sel.innerHTML = '<option value="">' + T('midiNone') + '</option>';
+        names.forEach(([id, nm]) => {
+          const o = document.createElement('option');
+          o.value = id; o.textContent = nm;
+          sel.appendChild(o);
+        });
+        sel.value = keep && names.some(n => n[0] === keep) ? keep : '';
+      };
+      if (!global.App.midiNames) { sel.innerHTML = '<option value="">' + T('midiNone') + '</option>'; return; }
+      fill(global.App.midiNames);
+    },
+
+    /* ---- HUD ---- */
+    showStage(show, free) {
+      $('hud').classList.toggle('on', show);
+      $('freeHint').style.display = (show && free) ? '' : 'none';
+    },
+  };
+
+  global.TSUI = UI;
+})(window);
+
+;
+/* TetoSynthesia — lõi ứng dụng: phát bài, đầu vào, âm thanh, vòng lặp */
+(function (global) {
+  'use strict';
+
+  const $ = (id) => document.getElementById(id);
+  const UI = () => global.TSUI;
+  const T = (...a) => global.TSI18N.T(...a);
+
+  const QW = { a: 60, w: 61, s: 62, e: 63, d: 64, f: 65, t: 66, g: 67, y: 68, h: 69, u: 70, j: 71, k: 72, o: 73, l: 74, p: 75, ';': 76 };
+
+  const DEFAULTS = {
+    palette: 'trang', customColor: null, qwerty: true, mode3d: false,
+    glow: true, fall: 240, vol: 0.8, midiDeviceId: '', speedIdx: 2,
+    lang: 'en', fpsCap: 120, fpsCustom: 165,
+  };
+  const SPEEDS = [0.25, 0.5, 1, 1.5, 2];
+
+  const App = {
+    screen: 'menu', stageMode: 'menu',
+    settings: Object.assign({}, DEFAULTS),
+    actx: null, synth: null, sfPlayer: null, sfName: '', sfPresetCount: 0, pendingSF: null,
+    midiAccess: null, midiNames: [], midiInput: null,
+    song: null, songName: '',
+    transport: 0, playing: false, speed: 1,
+    enterPtr: 0, audioPtr: 0, activeVisual: [],
+    trails: [], octave: 0,
+    demoSongs: [], userSongs: [], stressCount: 0,
+    stats: { fps: 0, visible: 0, voices: 0, skipped: 0 },
+    renderer: null,
+    qwertyHeld: new Set(), pointerKeys: new Map(),
+    _lastNow: performance.now(), _fpsEMA: 60, _statT: 0, _seekHold: false,
+    _lastDraw: 0, _fpsLimit: 120,
+
+    /* ---------- khởi động ---------- */
+    boot() {
+      this.loadSettings();
+      global.TSI18N.applyLang();
+      this.renderer = new global.TSRender.Renderer($('cv'));
+      this.renderer.fall = this.settings.fall;
+      this.renderer.mode3d = this.settings.mode3d;
+      this.renderer.glow = this.settings.glow;
+      this.speed = SPEEDS[this.settings.speedIdx || 2];
+      this.applyFps();
+
+      this.decodeDemos();
+      try { this.stressCount = global.TSSong.genStressSong().noteCount; } catch (e) { this.stressCount = 0; }
+
+      this.wireUI();
+      this.wireInput();
+      this.wireWebMidi();
+
+      UI().buildSettings();
+      UI().buildLibrary();
+      UI().showScreen('menu');
+
+      window.addEventListener('resize', () => this.renderer.resize());
+      const loop = (now) => { try { this.frame(now); } catch (e) { console.error('frame:', e && e.message); } requestAnimationFrame(loop); };
+      requestAnimationFrame(loop);
+    },
+
+    /* ---------- cài đặt ---------- */
+    loadSettings() {
+      try {
+        const s = JSON.parse(localStorage.getItem('ts_settings') || '{}');
+        this.settings = Object.assign({}, DEFAULTS, s);
+      } catch (e) { this.settings = Object.assign({}, DEFAULTS); }
+    },
+    saveSettings() { try { localStorage.setItem('ts_settings', JSON.stringify(this.settings)); } catch (e) {} },
+    applyVolume() {
+      const v = this.settings.vol;
+      if (this.synth) this.synth.setVolume(v);
+      if (this.sfPlayer) this.sfPlayer.setVolume(v);
+    },
+    applyFps() {
+      const S = this.settings;
+      let cap = S.fpsCap === 'custom' ? (+S.fpsCustom || 165) : (+S.fpsCap || 0);
+      cap = Math.max(0, Math.min(1000, Math.round(cap)));
+      this._fpsLimit = cap; // 0 = tối đa (rAF chạy theo tần số quét màn hình)
+    },
+    nf(n) {
+      try { return n.toLocaleString(this.settings.lang === 'vi' ? 'vi-VN' : 'en-US'); } catch (e) { return n; }
+    },
+
+    /* ---------- âm thanh ---------- */
+    ensureAudio() {
+      if (this.actx) return true;
+      try {
+        const AC = global.AudioContext || global.webkitAudioContext;
+        this.actx = new AC();
+        if (this.actx.state === 'suspended') this.actx.resume().catch(() => {});
+        this.synth = new global.TSSynth.TetoSynth(this.actx);
+        if (this.pendingSF) {
+          try {
+            const { SFPlayer } = global.TSSF2;
+            this.sfPlayer = new SFPlayer(this.actx, this.pendingSF, { volume: this.settings.vol });
+            this.pendingSF = null;
+          } catch (e) { this.sfPlayer = null; }
+        }
+        this.applyVolume();
+        return true;
+      } catch (e) { this.actx = null; return false; }
+    },
+    playNote(i, when, dur) {
+      const song = this.song;
+      const key = song.key[i], vel = song.vel[i], chan = song.chan[i];
+      if (this.sfPlayer) {
+        const prog = song.programs && song.programs[chan] != null ? song.programs[chan] : 0;
+        this.sfPlayer.noteOn(key, vel, when, dur, chan, prog);
+      } else if (this.synth) {
+        this.synth.play(key, vel, when, dur);
+      }
+    },
+
+    /* ---------- demo ---------- */
+    decodeDemos() {
+      const { parseMIDI } = global.TSMidi;
+      for (const d of (global.DEMO_MIDIS || [])) {
+        try {
+          const raw = atob(d.data);
+          const u8 = new Uint8Array(raw.length);
+          for (let i = 0; i < raw.length; i++) u8[i] = raw.charCodeAt(i);
+          const song = parseMIDI(u8);
+          this.demoSongs.push({ name: d.name, data: d.data, song, notes: song.noteCount, dur: song.duration });
+        } catch (e) { /* bỏ qua demo lỗi */ }
+      }
+      this.demoSongs.sort((a, b) => a.name.localeCompare(b.name));
+    },
+    playDemoSong(demo) { this.playSong(demo.song, demo.name); },
+
+    /* ---------- phát bài ---------- */
+    playSong(song, name) {
+      this.ensureAudio();
+      this.song = song; this.songName = name || 'MIDI';
+      this.stageMode = 'player';
+      this.transport = 0; this.playing = true;
+      this.enterPtr = 0; this.audioPtr = 0; this.activeVisual = [];
+      this.trails = [];
+      if (this.synth) this.synth.allOff();
+      if (this.sfPlayer) this.sfPlayer.allOff();
+      this.renderer.pressed.fill(0);
+      $('songTitle').textContent = T('songCount', name, this.nf(song.noteCount));
+      $('btnPause').textContent = '⏸';
+      UI().showScreen(null);
+      this.paused = false;
+    },
+    stopToMenu() {
+      this.playing = false; this.stageMode = 'menu'; this.song = null;
+      if (this.synth) this.synth.allOff();
+      if (this.sfPlayer) this.sfPlayer.allOff();
+      this.renderer.pressed.fill(0);
+      UI().showScreen('menu');
+      UI().showStage(false, false);
+    },
+    togglePause() {
+      if (this.stageMode !== 'player') return;
+      this.paused = !this.paused;
+      $('btnPause').textContent = this.paused ? '▶' : '⏸';
+      if (this.actx && this.paused) this.actx.suspend().catch(() => {});
+      if (this.actx && !this.paused) this.actx.resume().catch(() => {});
+    },
+    seek(t) {
+      if (!this.song) return;
+      this.transport = Math.max(0, Math.min(this.song.duration, t));
+      const lb = this.lowerBound(this.transport - 2);
+      this.enterPtr = lb; this.audioPtr = lb;
+      this.activeVisual = [];
+      if (this.synth) this.synth.allOff();
+      if (this.sfPlayer) this.sfPlayer.allOff();
+    },
+    lowerBound(x) {
+      const s = this.song.start; let lo = 0, hi = s.length;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (s[m] < x) lo = m + 1; else hi = m; }
+      return lo;
+    },
+    enterVisual(T, viewTime) {
+      const song = this.song;
+      while (this.enterPtr < song.noteCount && song.start[this.enterPtr] < T + viewTime) {
+        this.activeVisual.push(this.enterPtr++);
+      }
+    },
+
+    /* ---------- chơi trực tiếp ---------- */
+    liveOn(key, vel) {
+      if (key < 0 || key > 127) return;
+      this.ensureAudio();
+      const when = performance.now() / 1000;
+      this.renderer.pressed[key] = 1;
+      if (this.trails.length < 400) this.trails.push({ key, tStart: when, tEnd: 0 });
+      const sfLive = this.sfPlayer && this.sfPlayer.noteOn(key, vel || 100, this.actx ? this.actx.currentTime + 0.01 : 0, null, 0, 0);
+      if (!sfLive && this.synth) this.synth.press(key, vel || 100);
+    },
+    liveOff(key) {
+      this.renderer.pressed[key] = 0;
+      const when = performance.now() / 1000;
+      for (const tr of this.trails) if (tr.key === key && !tr.tEnd) tr.tEnd = when;
+      if (this.sfPlayer) this.sfPlayer.release(key);
+      if (this.synth) this.synth.release(key);
+    },
+
+    /* ---------- vòng lặp ---------- */
+    frame(now) {
+      if (this._fpsLimit > 0 && now - this._lastDraw < 1000 / this._fpsLimit - 0.6) return;
+      const dt = Math.min(0.1, (now - this._lastNow) / 1000);
+      this._lastNow = now;
+      this._lastDraw = now;
+      this._fpsEMA = this._fpsEMA * 0.95 + (1 / Math.max(dt, 1e-4)) * 0.05;
+      const song = this.song;
+
+      if (this.stageMode === 'player' && song) {
+        if (!this.paused && this.playing) this.transport += dt * this.speed;
+        if (this.transport >= song.duration + 0.6) { this.seek(0); this.paused = true; $('btnPause').textContent = '▶'; }
+        // hẹn âm thanh theo cửa sổ tra trước
+        if (!this.paused && this.actx) {
+          const ctxT = this.actx.currentTime;
+          const horizon = this.transport + 0.15;
+          let budget = 40;
+          while (this.audioPtr < song.noteCount && song.start[this.audioPtr] < horizon) {
+            const i = this.audioPtr++;
+            const st = song.start[i];
+            if (st < this.transport - 0.05) continue;
+            const when = Math.max(ctxT + 0.01, ctxT + (st - this.transport) / this.speed);
+            const dur = Math.max(0.06, (song.end[i] - st) / this.speed);
+            this.playNote(i, when, dur);
+            if (--budget <= 0) break;
+          }
+        }
+        // HUD
+        $('progressFill').style.width = (Math.min(1, this.transport / Math.max(0.001, song.duration)) * 100) + '%';
+        this._statT += dt;
+        if (this._statT > 0.25) {
+          this._statT = 0;
+          $('timeBox').textContent = UI().fmtTime(this.transport) + ' / ' + UI().fmtTime(song.duration);
+          const voices = this.sfPlayer ? this.sfPlayer.voices : (this.synth ? this.synth.voices : 0);
+          const skipped = this.sfPlayer ? this.sfPlayer.skipped : (this.synth ? this.synth.skipped : 0);
+          $('stats').innerHTML =
+            this._fpsEMA.toFixed(0) + ' FPS<br>' +
+            T('statsVisible', this.nf(this.stats.visible)) + '<br>' +
+            voices + ' voice' + (skipped ? T('statsSkipped', this.nf(skipped)) : '');
+        }
+      } else if (this.stageMode === 'free') {
+        this._statT += dt;
+        if (this._statT > 0.5) {
+          this._statT = 0;
+          $('stats').innerHTML = T('statsFree', this._fpsEMA.toFixed(0));
+        }
+      }
+
+      this.renderer.drawFrame(this, dt, now);
+    },
+
+    /* ---------- gắn sự kiện UI ---------- */
+    wireUI() {
+      $('mFree').onclick = () => this.openFree();
+      $('mPlay').onclick = () => { UI().showScreen('lib'); UI().buildLibrary(); };
+      $('mSet').onclick = () => { UI().showScreen('set'); UI().buildSettings(); };
+      $('libBack').onclick = () => UI().showScreen('menu');
+      $('setBack').onclick = () => UI().showScreen('menu');
+      $('btnBack').onclick = () => this.stopToMenu();
+      $('btnPause').onclick = () => this.togglePause();
+      $('btnSpeed').onclick = () => {
+        const i = (SPEEDS.indexOf(this.speed) + 1) % SPEEDS.length;
+        this.speed = SPEEDS[i]; this.settings.speedIdx = i; this.saveSettings();
+        $('btnSpeed').textContent = this.speed + '×';
+      };
+      $('search').oninput = () => UI().buildLibrary();
+      $('btnOpenMidi').onclick = () => $('fileMidi').click();
+      $('fileMidi').onchange = (e) => { if (e.target.files[0]) this.loadMidiFile(e.target.files[0]); e.target.value = ''; };
+      $('btnSf').onclick = () => $('fileSf').click();
+      $('btnSfReset').onclick = () => {
+        this.sfPlayer = null; this.sfName = ''; this.sfPresetCount = 0;
+        if (this.synth) this.applyVolume();
+        UI().refreshSfStatus(); UI().toast(T('toastResetSf'));
+      };
+      $('fileSf').onchange = (e) => { if (e.target.files[0]) this.loadSFFile(e.target.files[0]); e.target.value = ''; };
+      $('progress').onclick = (e) => {
+        if (!this.song) return;
+        const r = $('progress').getBoundingClientRect();
+        this.seek(((e.clientX - r.left) / r.width) * this.song.duration);
+      };
+      $('midiRefresh').onclick = () => this.wireWebMidi(true);
+      $('midiDev').onchange = () => {
+        this.settings.midiDeviceId = $('midiDev').value; this.saveSettings();
+        this.bindMidiInput();
+      };
+
+      // kéo-thả
+      const drop = $('drop');
+      window.addEventListener('dragover', (e) => { e.preventDefault(); drop.classList.add('on'); });
+      window.addEventListener('dragleave', (e) => { if (e.target === drop) drop.classList.remove('on'); });
+      window.addEventListener('drop', (e) => {
+        e.preventDefault(); drop.classList.remove('on');
+        const f = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+        if (!f) return;
+        const n = f.name.toLowerCase();
+        if (n.endsWith('.mid') || n.endsWith('.midi') || n.endsWith('.rmi')) this.loadMidiFile(f);
+        else if (n.endsWith('.sf2') || n.endsWith('.sf1')) this.loadSFFile(f);
+        else UI().toast(T('toastBadFile'));
+      });
+    },
+
+    openFree() {
+      this.ensureAudio();
+      this.stageMode = 'free'; this.song = null;
+      this.playing = false; this.paused = false;
+      this.trails = [];
+      $('songTitle').textContent = T('songTitleFree');
+      UI().showScreen(null);
+      UI().showStage(true, true);
+    },
+
+    /* ---------- nạp file ---------- */
+    async loadMidiFile(file) {
+      UI().toast(T('toastReading', file.name));
+      try {
+        const buf = await file.arrayBuffer();
+        const song = global.TSMidi.parseMIDI(new Uint8Array(buf));
+        const item = { name: file.name.replace(/\.(midi?|rmi)$/i, ''), song };
+        this.userSongs.unshift(item);
+        UI().toast(T('toastLoaded', this.nf(song.noteCount), UI().fmtTime(song.duration)));
+        this.playSong(song, item.name);
+      } catch (e) {
+        UI().toast(T('toastMidiErr', e.message));
+      }
+    },
+    async loadSFFile(file) {
+      UI().toast(T('toastSfLoading'));
+      try {
+        const buf = await file.arrayBuffer();
+        const sf = global.TSSF2.parseSF2(new Uint8Array(buf));
+        if (this.actx) {
+          const { SFPlayer } = global.TSSF2;
+          this.sfPlayer = new SFPlayer(this.actx, sf, { volume: this.settings.vol });
+        } else this.pendingSF = sf;
+        this.sfName = file.name; this.sfPresetCount = sf.presets.length;
+        this.applyVolume();
+        UI().refreshSfStatus();
+        UI().toast(T('toastSfOk', file.name, sf.presets.length));
+      } catch (e) {
+        UI().toast(T('toastSfErr', e.message));
+      }
+    },
+
+    /* ---------- đầu vào: bàn phím + chuột ---------- */
+    wireInput() {
+      window.addEventListener('keydown', (e) => {
+        if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT')) return;
+        const k = e.key.toLowerCase();
+        if (k === 'escape') { this.stopToMenu(); return; }
+        if (this.stageMode === 'player' && k === ' ') { e.preventDefault(); this.togglePause(); return; }
+        if (this.stageMode === 'player' && k === 'arrowleft') { this.seek(this.transport - 5); return; }
+        if (this.stageMode === 'player' && k === 'arrowright') { this.seek(this.transport + 5); return; }
+        if (!this.settings.qwerty) return;
+        if (k === 'z') { this.octave = Math.max(-2, this.octave - 1); UI().toast(T('toastOctave', this.octave), 1200); return; }
+        if (k === 'x') { this.octave = Math.min(2, this.octave + 1); UI().toast(T('toastOctave', this.octave), 1200); return; }
+        if (QW[k] != null && !e.repeat && !this.qwertyHeld.has(k)) {
+          this.qwertyHeld.add(k);
+          this.liveOn(QW[k] + this.octave * 12, 100);
+        }
+      });
+      window.addEventListener('keyup', (e) => {
+        const k = e.key.toLowerCase();
+        if (QW[k] != null && this.qwertyHeld.has(k)) {
+          this.qwertyHeld.delete(k);
+          this.liveOff(QW[k] + this.octave * 12);
+        }
+      });
+
+      const cv = $('cv');
+      const pickKey = (px, py) => {
+        const r = this.renderer, kbY = r.hitY();
+        if (py < kbY || py > kbY + r.keyH) return null;
+        const inBlackZone = py <= kbY + r.keyH * 0.62;
+        if (inBlackZone) {
+          for (let k = global.TSRender.A0; k <= global.TSRender.C8; k++) {
+            if (!global.TSRender.KM.isBlack[k]) continue;
+            const g = r.keyGeom(k);
+            if (px >= g.x && px <= g.x + g.w) return k;
+          }
+        }
+        const idx = Math.floor(px / r.keyW);
+        for (let k = global.TSRender.A0; k <= global.TSRender.C8; k++) {
+          if (global.TSRender.KM.isBlack[k]) continue;
+          if (global.TSRender.KM.wIdx[k] === idx) return k;
+        }
+        return null;
+      };
+      cv.addEventListener('pointerdown', (e) => {
+        if (this.stageMode !== 'free' && this.stageMode !== 'menu') return;
+        if (this.screen) return; // đang mở màn hình phủ
+        const k = pickKey(e.clientX, e.clientY);
+        if (k == null) return;
+        cv.setPointerCapture(e.pointerId);
+        this.pointerKeys.set(e.pointerId, k);
+        this.liveOn(k, 100);
+      });
+      cv.addEventListener('pointermove', (e) => {
+        if (!this.pointerKeys.has(e.pointerId)) return;
+        const old = this.pointerKeys.get(e.pointerId);
+        const k = pickKey(e.clientX, e.clientY);
+        if (k != null && k !== old) {
+          this.liveOff(old);
+          this.liveOn(k, 100);
+          this.pointerKeys.set(e.pointerId, k);
+        }
+      });
+      const up = (e) => {
+        const k = this.pointerKeys.get(e.pointerId);
+        if (k != null) { this.liveOff(k); this.pointerKeys.delete(e.pointerId); }
+      };
+      cv.addEventListener('pointerup', up);
+      cv.addEventListener('pointercancel', up);
+    },
+
+    /* ---------- Web MIDI ---------- */
+    async wireWebMidi(refresh) {
+      if (!navigator.requestMIDIAccess) {
+        this.midiNames = [];
+        UI().refreshMidiDevices();
+        return;
+      }
+      try {
+        this.midiAccess = await navigator.requestMIDIAccess({ sysex: false });
+        const list = [];
+        for (const inp of this.midiAccess.inputs.values()) list.push([inp.id, inp.name || 'MIDI IN']);
+        this.midiNames = list;
+        UI().refreshMidiDevices();
+        this.midiAccess.onstatechange = () => { this.wireWebMidi(); UI().toast(T('toastMidiChanged')); };
+        this.bindMidiInput();
+        if (refresh && list.length) UI().toast(T('toastMidiList', list.map(x => x[1]).join(', ')));
+      } catch (e) { this.midiNames = []; UI().refreshMidiDevices(); }
+    },
+    bindMidiInput() {
+      if (!this.midiAccess) return;
+      if (this.midiInput) { this.midiInput.onmidimessage = null; this.midiInput = null; }
+      const want = this.settings.midiDeviceId;
+      if (!want) return;
+      const inp = this.midiAccess.inputs.get(want);
+      if (!inp) return;
+      this.midiInput = inp;
+      inp.onmidimessage = (msg) => {
+        const [st, d1, d2] = msg.data;
+        const type = st & 0xf0;
+        if (type === 0x90 && d2 > 0) this.liveOn(d1, d2);
+        else if (type === 0x80 || (type === 0x90 && d2 === 0)) this.liveOff(d1);
+      };
+    },
+  };
+
+  /* hook debug/test (dùng cho chụp ảnh tự động) */
+  global.App = App;
+  window.addEventListener('DOMContentLoaded', () => App.boot());
+})(window);
+</script>
+</body>
+</html>
